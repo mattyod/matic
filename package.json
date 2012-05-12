@@ -1,0 +1,12 @@
+{
+	"name": "schema",
+	"description": "Automated HTML documentation for JSON schemas",
+	"version": "0.0.1",
+	"author": {
+		"name": "Matthew O'Donoghue"
+	},
+	"main": "lib/schema",
+	"bin": {
+		"schema": "bin/schema"
+	}
+}

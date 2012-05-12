@@ -1,10 +1,8 @@
 var unrequire = require('../lib/unrequire');
-var sinon = require('sinon');
-
-
 
 module.exports = {
 	setUp: function(callback) {
+		
 		// Store a copy of stdout.write
 		this.oldStdout = process.stdout.write;
 
@@ -21,6 +19,7 @@ module.exports = {
 		callback();
 	},
 	tearDown: function(callback) {
+		
 		// Restore stdout.write
 		process.stdout.write = this.oldStdout;
 		
@@ -53,7 +52,6 @@ module.exports = {
 
 		});
 
-
 		test.done();
 	},
 	version: function(test) {
@@ -62,6 +60,7 @@ module.exports = {
 		test.expect(8);
 
 		['--version', '-version', '-v', 'version'].forEach(function(arg) {
+			
 			// version.js has not yet been required
 			test.strictEqual(require.cache[self.path + '/version.js'], undefined);
 			

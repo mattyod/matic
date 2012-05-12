@@ -1,0 +1,170 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/home/dev/example-app/img/banner.jpg",
+		"/Users/home/dev/example-app/_posts/2010-10-10-wings.md",
+		"/Users/home/dev/example-app/_posts/2010-10-10.md",
+		"/Users/home/dev/example-app/portfolio/index.html",
+		"/Users/home/dev/example-app/_layouts/portfolio_entry.html",
+		"/Users/home/dev/example-app/_posts/2010-03-04-bikes.md",
+		"/Users/home/dev/example-app/_site/errors/404.html",
+		"/Users/home/dev/example-app/index.html",
+		"/Users/home/dev/example-app/css/style.css",
+		"/Users/home/dev/test/web/index.html",
+		"/Users/home/dev/example-app/_layouts/default.html",
+		"/Users/home/dev/wow/web/js/wow/wow.connect.js",
+		"/Users/home/dev/wow/web/js/wow/wow.show.js",
+		"/Users/home/dev/wow/web/js/wow/wow.controls.js",
+		"/Users/home/dev/wow/web/js/wow/wow.plot.js",
+		"/Users/home/dev/test/server.js",
+		"/Users/home/dev/example-app/server.js",
+		"/Users/home/dev/wow/web/index.html",
+		"/Users/home/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/home/dev/backbone/web/scss/screen.scss",
+		"/Users/home/dev/backbone/web/js/todo/collection.js",
+		"/Users/home/dev/backbone/web/data/tasks.json",
+		"/Users/home/dev/backbone/web/js/todo/template.js",
+		"/Users/home/dev/backbone/web/js/todo/view.js",
+		"/Users/home/dev/backbone/web/js/todo/model.js",
+		"/Users/home/dev/backbone/web/index.html",
+		"/Users/home/dev/backbone/web/js/todo.js",
+		"/Users/home/dev/backbone/web/js/underscore.js",
+		"/Users/home/dev/backbone/web/js/jquery.js",
+		"/Users/home/dev/backbone/js/backbone.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"paper",
+			"line",
+			"end",
+			"		},"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"web/js/todo/model.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

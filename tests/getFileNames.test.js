@@ -1,29 +1,55 @@
 // Tested module
-//var getFileNames = require('../lib/getFileNames');
-
+var getFileNames = require('../lib/getFileNames');
+console.log(getFileNames);
 // Helper modules
-var fs = require('fs');
-var exec = require('child_process').exec;
-console.log(fs.rmdirSync.toString());
+var fs 			= require('fs'),
+		exec 		= require('child_process').exec,
+		Events 	=	require('events').EventEmitter;;
+
+//console.log(fs.rmdirSync.toString());
 
 module.exports = {
 	setUp: function(callback) {
-		fs.mkdirSync('testFiles');
 
-		fs.writeFileSync('./testFiles/test1.json', 'test file', 'binary');
-		callback();
+		this.events = new Events();
+
+		fs.mkdir('testFiles', function(err) {
+			
+			if(err) {
+				console.log('testFiles folder already exists please delete it and run again');
+				return;
+			}
+
+			fs.writeFileSync('./testFiles/test1.json', 'test file');
+			fs.writeFileSync('./testFiles/test2.json', 'test file 2', 'binary');
+			fs.writeFileSync('./testFiles/test3.json', 'test file 3', 'binary');
+			fs.writeFileSync('./testFiles/test4.txt', 'test file that should not be read', 'binary');
+
+			callback();	
+
+		});
+
 	},
 	tearDown: function(callback) {
-		//fs.unlinkSync('./testFiles/test1.json');
-		//fs.rmdirSync('testFiles');
-			console.log(process.platform);
-			exec('rm -rf testFiless', function(asd) {
-				callback();
-			});
-		//process.exec('rm -rf testFiles');
-		//callback();
+		// TODO: Need to make this deletion cross platform
+		// I suppose we could write a big itterator class - but this seems easier
+		// console.log(process.platform);
+		exec('rm -rf testFiles', function() {
+			callback();	
+		});
+		
 	},
-	test1: function(test) {
-		test.done();
+	get: function(test) {
+		test.expect(1);
+
+		this.events.on('gotFileNames', function(fileNames) {
+			
+			test.deepEqual(fileNames, ['test1.json', 'test2.json', 'test3.json']);
+			
+			test.done();
+
+		});
+		
+		getFileNames(this.events, './testFiles/', 'json');
 	}
 };

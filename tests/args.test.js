@@ -12,6 +12,10 @@ module.exports = {
 				return; 
     	}
 		})(process.stdout.write);
+
+		// Suppress process.exit
+		// TODO: lets get sinon back on the scene
+		process.exit = function() {return};
 		
 		// Store path to our arguments modules for require.cache assertions
 		this.path = __dirname.replace(/tests/, 'lib/args');
@@ -40,10 +44,10 @@ module.exports = {
 			
 			// Call args.js
 			require('../lib/args');
-			
+				
 			// help.js does now exist in the require cache
 			test.ok(require.cache[self.path + '/help.js']);
-			
+
 			// Remove args.js from the require cache
 			unrequire('args');
 	

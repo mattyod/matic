@@ -1,12 +1,10 @@
 // Tested module
 var getFileNames = require('../lib/getFileNames');
-console.log(getFileNames);
+
 // Helper modules
 var fs 			= require('fs'),
 		exec 		= require('child_process').exec,
 		Events 	=	require('events').EventEmitter;;
-
-//console.log(fs.rmdirSync.toString());
 
 module.exports = {
 	setUp: function(callback) {

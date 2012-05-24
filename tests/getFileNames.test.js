@@ -18,10 +18,10 @@ module.exports = {
 				return;
 			}
 
-			fs.writeFileSync('./testFiles/test1.json', 'test file');
-			fs.writeFileSync('./testFiles/test2.json', 'test file 2', 'binary');
-			fs.writeFileSync('./testFiles/test3.json', 'test file 3', 'binary');
-			fs.writeFileSync('./testFiles/test4.txt', 'test file that should not be read', 'binary');
+			fs.writeFileSync('./testFiles/test1.json', '{"test": "file 1"}');
+			fs.writeFileSync('./testFiles/test2.json', '{"test": "file 2"}');
+			fs.writeFileSync('./testFiles/test3.json', '{"test": "file 3"}');
+			fs.writeFileSync('./testFiles/test4.txt', 'test file that should not be read');
 
 			callback();	
 
@@ -37,17 +37,35 @@ module.exports = {
 		});
 		
 	},
-	get: function(test) {
+	getSpecific: function(test) {
+		
 		test.expect(1);
 
 		this.events.on('gotFileNames', function(fileNames) {
 			
-			test.deepEqual(fileNames, ['test1.json', 'test2.json', 'test3.json']);
+			test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ]);
 			
 			test.done();
 
 		});
 		
 		getFileNames(this.events, './testFiles/', 'json');
+	
+	},
+	getAll: function(test) {
+		
+		test.expect(1);
+
+		this.events.on('gotFileNames', function(fileNames) {
+
+			test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ]);
+
+			test.done();
+		
+		});
+
+		// Call getFileNames without a file suffix filter
+		getFileNames(this.events, './testFiles/');
+
 	}
 };

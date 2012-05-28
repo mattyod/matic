@@ -1,20 +1,24 @@
 // Tested module
-var getFileNames = require('../lib/getFileNames');
+var getFileNames = require('../lib/getPaths');
 
 // Helper modules
 var fs 			= require('fs'),
 		exec 		= require('child_process').exec,
-		Events 	=	require('events').EventEmitter;;
+		Events 	=	require('events').EventEmitter,
+		config	= require('../lib/config');
 
 module.exports = {
 	setUp: function(callback) {
 
 		this.events = new Events();
 
+		config.testFiles = 'testFiles';
+
 		fs.mkdir('testFiles', function(err) {
 			
 			if(err) {
-				console.log('testFiles folder already exists please delete it and run again');
+				process.stdout.write('\n"testFiles" folder already exists please delete it and run again.\n');
+				process.stdout.write('This is probably because teardown failed to run on one of your previous tests.\n');
 				return;
 			}
 
@@ -39,24 +43,28 @@ module.exports = {
 	},
 	getSpecific: function(test) {
 		
-		test.expect(1);
+		test.expect(2);
 
-		this.events.on('gotFileNames', function(fileNames) {
+		this.events.on('gotPaths', function(folder, fileNames) {
 			
+			test.strictEqual(folder, 'testFiles');
+
 			test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ]);
 			
 			test.done();
 
 		});
 		
-		getFileNames(this.events, './testFiles/', 'json');
+		getFileNames(this.events, 'testFiles', 'json');
 	
 	},
 	getAll: function(test) {
 		
-		test.expect(1);
+		test.expect(2);
 
-		this.events.on('gotFileNames', function(fileNames) {
+		this.events.on('gotPaths', function(folder, fileNames) {
+
+			test.strictEqual(folder, 'testFiles');
 
 			test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ]);
 
@@ -65,7 +73,7 @@ module.exports = {
 		});
 
 		// Call getFileNames without a file suffix filter
-		getFileNames(this.events, './testFiles/');
+		getFileNames(this.events, 'testFiles');
 
 	}
 };

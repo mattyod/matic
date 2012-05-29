@@ -42,7 +42,7 @@ module.exports = {
     
     test.expect(1);
 
-    var desiredFiles = [ 'test1.json', 'test2.json', 'test3.json'];
+    var desiredFiles = [ 'test1.json', 'test2.json', 'test3.json' ];
 
     var desiredOutput = [ '{"test": "file 1"}', '{"test": "file 2"}', '{"test": "file 3"}' ];
 

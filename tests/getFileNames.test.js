@@ -4,13 +4,10 @@ var getFileNames = require('../lib/getFileNames');
 // Helper modules
 var fs 			= require('fs'),
 		exec 		= require('child_process').exec,
-		Events 	=	require('events').EventEmitter,
 		config	= require('../lib/config');
 
 module.exports = {
 	setUp: function(callback) {
-
-		this.events = new Events();
 
 		config.testFiles = 'testFiles';
 
@@ -43,37 +40,26 @@ module.exports = {
 	},
 	getSpecific: function(test) {
 		
-		test.expect(2);
-
-		this.events.on('gotPaths', function(folder, fileNames) {
-			
-			test.strictEqual(folder, 'testFiles');
-
-			test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ]);
-			
-			test.done();
-
-		});
+		test.expect(1);
 		
-		getFileNames(this.events, 'testFiles', 'json');
+		// Call getFileNames with a suffix filter that exists
+		var fileNames = getFileNames('testFiles', 'json');
 	
+		test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ]);
+			
+		test.done();
+
 	},
 	getAll: function(test) {
 		
-		test.expect(2);
-
-		this.events.on('gotPaths', function(folder, fileNames) {
-
-			test.strictEqual(folder, 'testFiles');
-
-			test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ]);
-
-			test.done();
-		
-		});
+		test.expect(1);
 
 		// Call getFileNames without a file suffix filter
-		getFileNames(this.events, 'testFiles');
+		var fileNames = getFileNames('testFiles');
+
+		test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ]);
+
+		test.done();
 
 	}
 };

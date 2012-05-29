@@ -61,5 +61,17 @@ module.exports = {
 
 		test.done();
 
+	},
+	getNone: function(test) {
+
+		test.expect(1);
+
+		// Call getFileNames with a suffix filter that shouldn't exist or be returned
+		var fileNames = getFileNames('testFiles', '.doc');
+
+		test.deepEqual(fileNames, []);
+
+		test.done();
+		
 	}
 };

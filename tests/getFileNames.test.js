@@ -1,5 +1,5 @@
 // Tested module
-var getFileNames = require('../lib/getPaths');
+var getFileNames = require('../lib/getFileNames');
 
 // Helper modules
 var fs 			= require('fs'),

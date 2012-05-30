@@ -35,14 +35,14 @@ module.exports = {
   help: function(test) {
     
     test.expect(2);
-//console.log(this.exit);
+
     require('../lib/args/help');
     
-    // Help wrote something to the console
-    test.equals(this.write.calledOnce, true);
+    // help wrote something to the console
+    test.ok(this.write.calledOnce);
     
-    // Help then called a process exit
-    test.equals(this.exit.calledOnce, true);
+    // help then called a process exit
+    test.ok(this.exit.calledOnce);
     
     test.done();
   

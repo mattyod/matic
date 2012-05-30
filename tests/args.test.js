@@ -1,31 +1,36 @@
-var unrequire = require('../lib/unrequire');
+var unrequire = require('../lib/unrequire'),
+    sinon     = require('sinon');
 
 module.exports = {
 	setUp: function(callback) {
 		
-		// Store a copy of stdout.write
-		this.oldStdout = process.stdout.write;
+    sinon.stub(process.stdout, "write", function() {
+      return;
+    });
 
-		// Suppress stdout.write while we run the tests
-		process.stdout.write = (function(write) {
-			return function(/* string, encoding, fd */) {
-				return; 
-    	}
-		})(process.stdout.write);
+    sinon.stub(process, "exit", function() {
+      return;
+    });
 
-		// Suppress process.exit
-		// TODO: lets get sinon back on the scene
-		process.exit = function() {return};
-		
 		// Store path to our arguments modules for require.cache assertions
 		this.path = __dirname.replace(/tests/, 'lib/args');
+
+    // Remove args.js from the require cache
+    unrequire('args');
+  
+    // Remove help.js from the require.cache
+    unrequire('args/help');
+
+    // Remove version.js from the require.cache
+    unrequire('args/version');
 
 		callback();
 	},
 	tearDown: function(callback) {
 		
-		// Restore stdout.write
-		process.stdout.write = this.oldStdout;
+    process.stdout.write.restore();
+
+    process.exit.restore();
 		
 		callback();
 	},
@@ -37,7 +42,7 @@ module.exports = {
 		['--help', '-help', '-h', 'help'].forEach(function(arg) {
 			
 			// help.js has not yet been required
-			test.strictEqual(require.cache[self.path + '/help.js'], undefined);
+		  test.strictEqual(require.cache[self.path + '/help.js'], undefined);
 			
 			// Push argument into arguments array - as if user had entered ~ schema help
 			process.argv[2] = arg;
@@ -48,11 +53,11 @@ module.exports = {
 			// help.js does now exist in the require cache
 			test.ok(require.cache[self.path + '/help.js']);
 
-			// Remove args.js from the require cache
-			unrequire('args');
-	
-			// Remove help.js from the require.cache
-			unrequire('args/help');
+      // Remove args.js from the require cache
+      unrequire('args');
+  
+      // Remove help.js from the require.cache
+      unrequire('args/help');
 
 		});
 
@@ -76,13 +81,12 @@ module.exports = {
 			
 			// version.js does now exist in the require cache
 			test.ok(require.cache[self.path + '/version.js']);
-
-			// Remove args.js from the require cache
-			unrequire('args');
-	
-			// Remove version.js from the require.cache
-			unrequire('args/version');
-		
+		  
+      // Remove args.js from the require cache
+      unrequire('args');
+  
+      // Remove version.js from the require.cache
+      unrequire('args/version');
 		});
 		
 		test.done();

@@ -9,7 +9,7 @@ var fs 			= require('fs'),
 module.exports = {
 	setUp: function(callback) {
 
-		config.testFiles = 'testFiles';
+		config.testFiles = './testFiles';
 
 		fs.mkdir('testFiles', function(err) {
 			

@@ -3,13 +3,10 @@ var getFiles = require('../lib/getFiles');
 
 // Helper modules
 var fs      = require('fs'),
-    exec    = require('child_process').exec,
-    config  = require('../lib/config');
+    exec    = require('child_process').exec;
 
 module.exports = {
   setUp: function(callback) {
-
-    config.testFiles = 'testFiles/';
 
     fs.mkdir('testFiles', function(err) {
       
@@ -46,7 +43,7 @@ module.exports = {
 
     var desiredOutput = [ '{"test": "file 1"}', '{"test": "file 2"}', '{"test": "file 3"}' ];
 
-    var files = getFiles('testFiles', desiredFiles);
+    var files = getFiles('testFiles/', desiredFiles);
 
     test.deepEqual(files, desiredOutput);
 

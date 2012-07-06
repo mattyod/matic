@@ -16,10 +16,13 @@ module.exports = {
     this.schema = [fs.readFileSync('tests/testSchemas/testSchema.json', 'binary')];
 
     callback();
+
   },
 
   tearDown: function(callback) {
+    
     callback();
+  
   },
 
   mergeSchema: function(test) {

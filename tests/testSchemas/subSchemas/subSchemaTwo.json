@@ -1,0 +1,6 @@
+{
+  "subSubSchema": {
+    "name": "Test sub sub schema two",
+    "description": "This schema should be included by our sub schema. It is purely for test purposes and does not represent and actual JSON object."
+  }
+}

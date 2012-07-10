@@ -1,5 +1,4 @@
-var fs		= require('fs'),
-		pack 	= require('../../package.json');
+var pack 	= require('../../package.json');
 
 module.exports = (function() {
 	var version = 'schema: v' + 

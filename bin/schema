@@ -1,2 +1,11 @@
 #!/usr/bin/env node
-require('../lib/schema.js');
+
+// Handle any passed arguments
+require('./args');
+
+// Otherwise get our app requirements
+var schema = require('../lib/schema.js'),
+    config = require('./config');
+
+// Generate schema documentation with our config
+schema.generate(config);

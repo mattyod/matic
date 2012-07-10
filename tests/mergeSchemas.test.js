@@ -26,7 +26,7 @@ module.exports = {
   },
 
   mergeSchema: function(test) {
-    
+
     test.expect(1);
 
     var mergedSchema = mergeSchemas(this.schema);

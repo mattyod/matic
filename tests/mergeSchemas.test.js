@@ -6,7 +6,7 @@ var fs      = require('fs'),
     config  = require('../lib/config');
 
 module.exports = {
-  
+
   setUp: function(callback) {
 
     config.schemas = './tests/testSchemas/'
@@ -20,7 +20,7 @@ module.exports = {
   },
 
   tearDown: function(callback) {
-    
+
     callback();
   
   },

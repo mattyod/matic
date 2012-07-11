@@ -43,7 +43,7 @@ module.exports = {
 		test.expect(1);
 		
 		// Call getFileNames with a suffix filter that exists
-		var fileNames = getFileNames('testFiles', 'json');
+		var fileNames = getFileNames(config, 'testFiles', 'json');
 	
 		test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ]);
 			
@@ -55,7 +55,7 @@ module.exports = {
 		test.expect(1);
 
 		// Call getFileNames without a file suffix filter
-		var fileNames = getFileNames('testFiles');
+		var fileNames = getFileNames(config, 'testFiles');
 
 		test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ]);
 
@@ -67,7 +67,7 @@ module.exports = {
 		test.expect(1);
 
 		// Call getFileNames with a suffix filter that shouldn't exist or be returned
-		var fileNames = getFileNames('testFiles', '.doc');
+		var fileNames = getFileNames(config, 'testFiles', '.doc');
 
 		test.deepEqual(fileNames, []);
 

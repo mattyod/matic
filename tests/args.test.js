@@ -1,6 +1,8 @@
 var unrequire = require('../lib/unrequire'),
     sinon     = require('sinon');
 
+    var _ = require('underscore');
+
 module.exports = {
 	setUp: function(callback) {
 		
@@ -13,18 +15,19 @@ module.exports = {
     });
 
 		// Store path to our arguments modules for require.cache assertions
-		this.path = __dirname.replace(/tests/, 'lib/args');
+		this.path = __dirname.replace(/tests/, 'bin/args');
 
     // Remove args.js from the require cache
-    unrequire('args');
+    unrequire('bin/args');
   
     // Remove help.js from the require.cache
-    unrequire('args/help');
+    unrequire('bin/args/help');
 
     // Remove version.js from the require.cache
-    unrequire('args/version');
+    unrequire('bin/args/version');
 
 		callback();
+    
 	},
 	tearDown: function(callback) {
 		
@@ -33,6 +36,7 @@ module.exports = {
     process.exit.restore();
 		
 		callback();
+
 	},
 	help: function(test) {
 		var self = this;
@@ -48,16 +52,16 @@ module.exports = {
 			process.argv[2] = arg;
 			
 			// Call args.js
-			require('../lib/args');
-				
+			require('../bin/args');
+
 			// help.js does now exist in the require cache
 			test.ok(require.cache[self.path + '/help.js']);
 
       // Remove args.js from the require cache
-      unrequire('args');
+      unrequire('bin/args');
   
       // Remove help.js from the require.cache
-      unrequire('args/help');
+      unrequire('bin/args/help');
 
 		});
 
@@ -77,18 +81,18 @@ module.exports = {
 			process.argv[2] = arg;
 
 			// Call args.js
-			require('../lib/args');
+			require('../bin/args');
 			
 			// version.js does now exist in the require cache
 			test.ok(require.cache[self.path + '/version.js']);
 		  
       // Remove args.js from the require cache
-      unrequire('args');
+      unrequire('bin/args');
   
       // Remove version.js from the require.cache
-      unrequire('args/version');
+      unrequire('bin/args/version');
 		});
 		
 		test.done();
-	}	
+	}
 };

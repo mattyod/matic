@@ -36,7 +36,7 @@ module.exports = {
     
     test.expect(2);
 
-    require('../lib/args/help');
+    require('../bin/args/help');
     
     // help wrote something to the console
     test.ok(this.write.calledOnce);

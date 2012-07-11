@@ -4,7 +4,6 @@
 */
 
 module.exports = function(mod) {
-
-  delete(require.cache[process.env.PWD + '/' + mod + '.js']);
-
+  console.log(__dirname);
+	delete(require.cache[__dirname + '/' + mod + '.js']);
 };

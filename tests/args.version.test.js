@@ -37,7 +37,7 @@ module.exports = {
     
     test.expect(3);
 
-    require('../lib/args/version');
+    require('../bin/args/version');
     
     // version wrote something to the console
     test.ok(this.write.calledOnce);

@@ -29,7 +29,7 @@ module.exports = {
 
     test.expect(1);
 
-    var mergedSchema = mergeSchemas(this.schema);
+    var mergedSchema = mergeSchemas(config.schemas, this.schema);
 
     test.deepEqual(mergedSchema[0], this.expectedResult);
 

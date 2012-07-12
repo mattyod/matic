@@ -1,0 +1,20 @@
+
+Schema.js
+--------
+
+  Arguments
+  ---------
+
+    help
+    ----
+
+    help, -help, --help, --h, -h:
+
+      All the helps.
+
+    version
+    -------
+
+    version, -version, --version, -v, --v:
+
+      Display Schema.js version number. 

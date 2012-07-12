@@ -8,4 +8,7 @@ var schema = require('../lib/schema.js'),
     config = require('./config');
 
 // Generate schema documentation with our config
-schema.generate(config);
+if(schema.generate(config)) {
+  // TODO: Generate a proper completion message
+  process.stdout.write('\nBOOM!!!\n\n');
+}

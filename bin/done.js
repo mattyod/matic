@@ -1,3 +1,12 @@
+/*
+    done.js
+
+    Outputs our console completion message
+
+*/
+
 module.exports = function(config) {
-  return 'Built it in ' + config.target;
+
+  return '\nDocumentation built to ' + config.target + '\n\n';
+
 };

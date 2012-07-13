@@ -4,11 +4,14 @@
 require('./args');
 
 // Otherwise get our app requirements
-var schema = require('../lib/schema.js'),
-    config = require('./config');
+var schema  = require('../lib/schema.js'),
+    config  = require('./config'),
+    done    = require('./done');
 
 // Generate schema documentation with our config
 if(schema.generate(config)) {
+  
   // TODO: Generate a proper completion message
-  process.stdout.write('\nBOOM!!!\n\n');
+  process.stdout.write(done(config));
+
 }

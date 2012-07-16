@@ -9,11 +9,12 @@ var schema  = require('../lib/schema.js'),
     extend  = require('./extend'),
     done    = require('./done');
 
-  config = extend(config);
+config = extend(config);
 
 // Generate schema documentation with our config
 if(schema.generate(config)) {
-  // TODO: Generate a proper completion message
+  
+  // Let the user know that we are done
   process.stdout.write(done(config));
 
 }

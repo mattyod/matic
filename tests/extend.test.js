@@ -2,10 +2,10 @@
 var extend = require('../bin/extend.js');
 
 // Our expected extended object
-var testCase = {
+var expectedResult = {
   "test": "User mock config",
   "extra": "Extra user attribute"
-}
+};
 
 module.exports = {
   setUp: function(callback) {
@@ -37,7 +37,7 @@ module.exports = {
 
     var extended = extend(this.config);
 
-    test.deepEqual(extended, testCase);
+    test.deepEqual(extended, expectedResult);
     
     test.done();
 

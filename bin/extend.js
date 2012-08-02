@@ -19,7 +19,7 @@ module.exports = function(config) {
 
   // Build our config file path from the current process path
   var configPath = process.env.PWD + '/config.json';
-
+  
   // If there is a config.json file in our build folder
   if(fs.existsSync(configPath)) {
     

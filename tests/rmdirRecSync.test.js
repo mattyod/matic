@@ -15,7 +15,7 @@ var testFile = testFolder + path.sep + 'deleteThisFile.txt';
 var testSubFolder = testFolder + path.sep + 'subFolder';
 
 // Path to a file to be places within the sub folder.
-var testSubFile = testSubFolder + path.sep + 'deleteThisToo.txt'
+var testSubFile = testSubFolder + path.sep + 'deleteThisToo.txt';
 
 module.exports = {
   

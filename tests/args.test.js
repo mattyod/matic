@@ -1,7 +1,14 @@
-var unrequire = require('../bin/unrequire'),
-    sinon     = require('sinon');
+/*
+  
+  Tested module is args.js but it is self invoking so we will only
+  call it when needed.
 
-    var _ = require('underscore');
+*/
+
+// Helper modules.
+var unrequire = require('../bin/unrequire'),
+    sinon     = require('sinon'),
+     _        = require('underscore');
 
 module.exports = {
   setUp: function(callback) {

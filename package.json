@@ -1,12 +1,29 @@
 {
-  "name": "schema",
+  "name": "Schema",
   "description": "Automated HTML documentation for JSON schemas",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "keywords": [
+    "JSON",
+    "schema",
+    "documentation",
+    "tool"
+  ],
   "author": {
     "name": "Matthew O'Donoghue"
   },
-  "main": "lib/schema",
-  "bin": {
-    "schema": "bin/schema"
+  "main": "./lib/schema.js",
+  "bin": "./bin/schema",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattyod/schema"
+  },
+  "bugs": {
+    "url": "https://github.com/mattyod/schema/issues"
+  },
+  "dependencies": {
+    "underscore": ">=1.1"
+  },
+  "engines": {
+    "node": ">=0.8"
   }
 }

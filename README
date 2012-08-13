@@ -41,14 +41,14 @@ This is the source folder that Schema will look in for JSON schema files. These 
 
 Example:
 
-    {'source': './schemas/'}
+    {"source": "./schemas/"}
 
 ### Target
 This is the target folder that Schema will place generated HTML files into. The named folder does not need to exist when you run Schema as a new one will be created if an existing one cannot be found.
 
 Example:
 
-    {'target': './web/'}
+    {"target": "./web/"}
 
 ### Template
 This is an object containing details of the templating language that you intend Schema to use to generate your HTML output with. Please note at this time no testing has been carried out with any other language than Jade. It should work for others in theory but until I test that, you have been warned.
@@ -57,3 +57,28 @@ Paramaters within the template object are:
 
 #### Path
 The path to your template files.
+
+#### File
+The name of your primary template file.
+
+#### Lib
+The template library that you are using. N.B. Schema will assume that this is the file suffix of your template files.
+
+Example:
+
+    "template": {
+      "path": "./templates/",
+      "file": "default",
+      "lib": "jade"
+    }
+
+For this example Schema will expect to find a folder at the project root called 'templates', which contains a template file named default.jade.
+
+### Assets
+An array of files or folders that you want copied into your target folder. There is no assets reference by default within Schema, you will need to add your own config.json file to the project root if you want Schema to copy over any additional assets. Original assets will be left in un-touched.
+
+Example:
+
+  {"assets": ['css', 'js']}
+
+The above example would inform Schema that two folders 'css' and 'js', need to be copied into the target build folder. Copying is recursive so all sub folders and files within those folders will be copied across as well.

@@ -46,14 +46,13 @@ module.exports = {
 
   },
   help: function(test) {
-    var self = this;
 
     test.expect(8);
 
     ['--help', '-help', '-h', 'help'].forEach(function(arg) {
 
       // help.js has not yet been required
-      test.strictEqual(require.cache[self.path + '/help.js'], undefined);
+      test.strictEqual(require.cache[this.path + '/help.js'], undefined);
 
       // Push argument into arguments array - as if user had entered ~ schema help
       process.argv[2] = arg;
@@ -62,7 +61,7 @@ module.exports = {
       require('../bin/args');
 
       // help.js does now exist in the require cache
-      test.ok(require.cache[self.path + '/help.js']);
+      test.ok(require.cache[this.path + '/help.js']);
 
       // Remove args.js from the require cache
       unrequire('bin/args');
@@ -70,19 +69,18 @@ module.exports = {
       // Remove help.js from the require.cache
       unrequire('bin/args/help');
 
-    });
+    }, this);
 
     test.done();
   },
   version: function(test) {
-    var self = this;
 
     test.expect(8);
 
     ['--version', '-version', '-v', 'version'].forEach(function(arg) {
 
       // version.js has not yet been required
-      test.strictEqual(require.cache[self.path + '/version.js'], undefined);
+      test.strictEqual(require.cache[this.path + '/version.js'], undefined);
 
       // Push argument into arguments array - as if user had entered ~ schema version
       process.argv[2] = arg;
@@ -91,7 +89,7 @@ module.exports = {
       require('../bin/args');
 
       // version.js does now exist in the require cache
-      test.ok(require.cache[self.path + '/version.js']);
+      test.ok(require.cache[this.path + '/version.js']);
 
       // Remove args.js from the require cache
       unrequire('bin/args');
@@ -99,7 +97,7 @@ module.exports = {
       // Remove version.js from the require.cache
       unrequire('bin/args/version');
 
-    });
+    }, this);
 
     test.done();
   }

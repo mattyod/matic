@@ -25,7 +25,7 @@ From the root of your project simply type:
 
     schema
 
-For an example of how to structure your project folder before you do this take a look at [as yet unbuilt example project](#). But essentially you will need a folder with at least one schema in it and another folder with at least one template file in it. Currently Schema has only been tested with Jade templates but in theory should work with any templating language that uses the methods compile() and render().
+For an example of how to structure your project folder before you do this take a look at [as yet unbuilt example project](https://github.com/mattyod/schema-simple-example). But essentially you will need a folder with at least one schema in it and another folder with at least one template file in it. Currently Schema has only been tested with Jade templates but in theory should work with any templating language that uses the methods compile() and render().
 
 Initially Schema's config is set to look for a main template with the filename default.jade but this can be over-ridden with a project level config file, see below.
 

@@ -7,13 +7,26 @@ module.exports = {
 
     test.expect(7);
 
-    test.ok(config.source);
-    test.ok(config.target);
-    test.ok(config.schemas);
-    test.ok(config.template);
-    test.ok(config.template.path);
-    test.ok(config.template.file);
-    test.ok(config.template.lib);
+    test.ok(config.source,
+      'source reference exists');
+    
+    test.ok(config.target,
+      'target reference exists');
+
+    test.ok(config.schemas,
+      'schemas reference exists');
+
+    test.ok(config.template,
+      'template object exits');
+
+    test.ok(config.template.path,
+      'template path reference exists');
+
+    test.ok(config.template.file,
+      'template file reference exists');
+
+    test.ok(config.template.lib,
+      'template lib reference exists');
 
     test.done();
 

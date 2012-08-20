@@ -79,8 +79,8 @@ module.exports = {
 
     ['--version', '-version', '-v', 'version'].forEach(function(arg) {
 
-      // version.js has not yet been required
-      test.strictEqual(require.cache[this.path + '/version.js'], undefined);
+      test.strictEqual(require.cache[this.path + '/version.js'], undefined,
+        'version.js has not yet been required');
 
       // Push argument into arguments array - as if user had entered ~ schema version
       process.argv[2] = arg;
@@ -88,8 +88,8 @@ module.exports = {
       // Call args.js
       require('../bin/args');
 
-      // version.js does now exist in the require cache
-      test.ok(require.cache[this.path + '/version.js']);
+      test.ok(require.cache[this.path + '/version.js'],
+        'version.js does now exist in the require cache');
 
       // Remove args.js from the require cache
       unrequire('bin/args');

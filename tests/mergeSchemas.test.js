@@ -31,7 +31,8 @@ module.exports = {
 
     var mergedSchema = mergeSchemas(config.schemas, this.schema);
 
-    test.deepEqual(mergedSchema[0], this.expectedResult);
+    test.deepEqual(mergedSchema[0], this.expectedResult,
+      'Merged schema matches expected output');
 
     test.done();
 

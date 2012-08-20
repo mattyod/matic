@@ -39,17 +39,17 @@ module.exports = {
 
     require('../bin/args/version');
     
-    // version wrote something to the console
-    test.ok(this.write.calledOnce);
+    test.ok(this.write.calledOnce,
+      'version wrote something to the console');
 
     // Get the first (and only) call to process.stdout.write
     var spyCall = this.write.getCall(0)
 
-    // version called process.stdout.write with the correct version number
-    test.ok(spyCall.args[0].match(pack.version));
+    test.ok(spyCall.args[0].match(pack.version),
+      'version called process.stdout.write with the correct version number');
     
-    // version then called a process exit
-    test.ok(this.exit.calledOnce);
+    test.ok(this.exit.calledOnce,
+      'version then called a process exit');
     
     test.done();
   

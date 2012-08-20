@@ -38,11 +38,11 @@ module.exports = {
 
     require('../bin/args/help');
     
-    // help wrote something to the console
-    test.ok(this.write.calledOnce);
+    test.ok(this.write.calledOnce,
+      'help wrote something to the console');
     
-    // help then called a process exit
-    test.ok(this.exit.calledOnce);
+    test.ok(this.exit.calledOnce,
+      'help then called a process exit');
     
     test.done();
   

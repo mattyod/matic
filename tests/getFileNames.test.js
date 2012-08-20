@@ -49,7 +49,8 @@ module.exports = {
     // Call getFileNames with a suffix filter that exists
     var fileNames = getFileNames(config, 'testFiles', 'json');
 
-    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ]);
+    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ],
+      'fileNames array is built without .txt file');
 
     test.done();
 
@@ -61,7 +62,8 @@ module.exports = {
     // Call getFileNames without a file suffix filter
     var fileNames = getFileNames(config, 'testFiles');
 
-    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ]);
+    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ],
+      'fileNames array is built with all files');
 
     test.done();
 
@@ -73,7 +75,8 @@ module.exports = {
     // Call getFileNames with a suffix filter that shouldn't exist or be returned
     var fileNames = getFileNames(config, 'testFiles', '.doc');
 
-    test.deepEqual(fileNames, []);
+    test.deepEqual(fileNames, [],
+      'An empty array is returned');
 
     test.done();
 

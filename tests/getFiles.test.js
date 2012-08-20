@@ -45,7 +45,8 @@ module.exports = {
 
     var files = getFiles('testFiles/', desiredFiles);
 
-    test.deepEqual(files, desiredOutput);
+    test.deepEqual(files, desiredOutput,
+      'File contents are gathered into array as expected');
 
     test.done();
 

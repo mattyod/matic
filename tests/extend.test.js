@@ -37,7 +37,8 @@ module.exports = {
 
     var extended = extend(this.config);
 
-    test.deepEqual(extended, expectedResult);
+    test.deepEqual(extended, expectedResult,
+      'config object is extended as expected');
     
     test.done();
 

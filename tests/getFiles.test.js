@@ -35,7 +35,7 @@ module.exports = {
     callback();
 
   },
-  
+
   getFiles: function(test) {
     
     test.expect(1);
@@ -52,4 +52,5 @@ module.exports = {
     test.done();
 
   }
+  
 };

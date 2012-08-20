@@ -62,6 +62,7 @@ module.exports = {
       'Test folder is deleted');
 
     test.done();
+
   }
 
-}
+};

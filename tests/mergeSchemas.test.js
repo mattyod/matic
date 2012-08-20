@@ -37,4 +37,5 @@ module.exports = {
     test.done();
 
   }
-}
+
+};

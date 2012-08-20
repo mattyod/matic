@@ -7,6 +7,7 @@ var sinon         = require('sinon'),
     rmdirSyncRec  = require('../lib/rmdirSyncRec');
 
 module.exports = {
+
   setUp: function(callback) {
 
     // Mock config object.
@@ -32,6 +33,7 @@ module.exports = {
     callback();
   
   },
+
   tearDown: function(callback) {
     
     // Clean up target folder
@@ -40,6 +42,7 @@ module.exports = {
     callback();
 
   },
+
   test: function(test) {
 
     test.expect(4);
@@ -62,4 +65,5 @@ module.exports = {
     test.done();
 
   }
+  
 };

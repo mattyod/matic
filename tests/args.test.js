@@ -11,6 +11,7 @@ var unrequire = require('../bin/unrequire'),
      _        = require('underscore');
 
 module.exports = {
+
   setUp: function(callback) {
 
     sinon.stub(process.stdout, "write", function() {
@@ -36,6 +37,7 @@ module.exports = {
     callback();
 
   },
+
   tearDown: function(callback) {
 
     process.stdout.write.restore();
@@ -45,6 +47,7 @@ module.exports = {
     callback();
 
   },
+
   help: function(test) {
 
     test.expect(8);
@@ -72,7 +75,9 @@ module.exports = {
     }, this);
 
     test.done();
+  
   },
+
   version: function(test) {
 
     test.expect(8);
@@ -100,5 +105,7 @@ module.exports = {
     }, this);
 
     test.done();
+  
   }
+
 };

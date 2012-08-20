@@ -8,6 +8,7 @@ var expectedResult = {
 };
 
 module.exports = {
+
   setUp: function(callback) {
     // Create a mocked config object
     this.config = {
@@ -23,6 +24,7 @@ module.exports = {
     callback();
 
   },
+
   tearDown: function(callback) {
     
     // Restore the process invokation path
@@ -31,6 +33,7 @@ module.exports = {
     callback();
 
   },
+
   extend: function(test) {
     
     test.expect(1);
@@ -43,4 +46,5 @@ module.exports = {
     test.done();
 
   }
+  
 };

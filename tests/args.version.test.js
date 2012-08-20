@@ -11,6 +11,7 @@ var sinon = require('sinon'),
     pack  = require('../package.json');
 
 module.exports = {
+
   setUp: function(callback) {
    
     this.write = sinon.stub(process.stdout, "write", function(string) {
@@ -24,6 +25,7 @@ module.exports = {
     callback();
 
   },
+
   tearDown: function(callback) {
     
     process.stdout.write.restore();
@@ -33,6 +35,7 @@ module.exports = {
     callback();
   
   },
+
   version: function(test) {
     
     test.expect(3);
@@ -54,4 +57,5 @@ module.exports = {
     test.done();
   
   }
+  
 };

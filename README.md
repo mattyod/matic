@@ -79,6 +79,6 @@ An array of files or folders that you want copied into your target folder. There
 
 Example:
 
-  {"assets": ['css', 'js']}
+    {"assets": ['css', 'js']}
 
 The above example would inform Schema that two folders 'css' and 'js', need to be copied into the target build folder. Copying is recursive so all sub folders and files within those folders will be copied across as well.

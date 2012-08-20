@@ -2,8 +2,8 @@
 var getFiles = require('../lib/getFiles');
 
 // Helper modules
-var fs      = require('fs'),
-    exec    = require('child_process').exec;
+var fs            = require('fs'),
+    rmdirSyncRec  = require('../lib/rmdirSyncRec');;
 
 module.exports = {
   setUp: function(callback) {
@@ -26,15 +26,16 @@ module.exports = {
     });
 
   },
+
   tearDown: function(callback) {
-    // TODO: Need to make this deletion cross platform
-    // I suppose we could write a big itterator class - but this seems easier
-    // console.log(process.platform);
-    exec('rm -rf testFiles', function() {
-      callback(); 
-    });
     
+    // Tidy up
+    rmdirSyncRec('testFiles');
+
+    callback();
+
   },
+  
   getFiles: function(test) {
     
     test.expect(1);

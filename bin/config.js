@@ -16,6 +16,7 @@ module.exports = (function() {
       'file': 'default',
       'lib': 'jade'
     }
+    
 	};
 
 })();

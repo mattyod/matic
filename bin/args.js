@@ -17,7 +17,7 @@ module.exports = (function() {
       case '--help':
       case '-help':
       case '-h':
-      case 'help': 
+      case 'help':
         require('./args/help');
         break;
       case '--version':

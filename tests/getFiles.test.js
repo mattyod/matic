@@ -3,7 +3,7 @@ var getFiles = require('../lib/getFiles');
 
 // Helper modules
 var fs            = require('fs'),
-    rmdirSyncRec  = require('../lib/rmdirSyncRec');;
+    rmdirSyncRec  = require('../lib/rmdirSyncRec');
 
 module.exports = {
   setUp: function(callback) {

@@ -60,7 +60,7 @@ module.exports = {
       'First html file generated from template');
 
     test.ok(fs.existsSync(this.config.target + 'two.html'),
-      'Second html file generated from template')
+      'Second html file generated from template');
 
     test.done();
 

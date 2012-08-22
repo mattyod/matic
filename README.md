@@ -82,3 +82,7 @@ Example:
     {"assets": ['css', 'js']}
 
 The above example would inform Schema that two folders 'css' and 'js', need to be copied into the target build folder. Copying is recursive so all sub folders and files within those folders will be copied across as well.
+
+## Licence
+
+[MIT](https://github.com/mattyod/schema/blob/master/LICENSE)

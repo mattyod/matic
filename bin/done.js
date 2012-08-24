@@ -1,7 +1,9 @@
 /*
     done.js
 
-    Outputs our console completion message
+    Outputs the console completion message.
+
+    Accepts: config - the config object
 
 */
 

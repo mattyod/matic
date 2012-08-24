@@ -1,7 +1,7 @@
 {
   "name": "Schema",
   "description": "Automated HTML documentation for JSON schemas",
-  "version": "0.0.2",
+  "version": "0.1",
   "keywords": [
     "JSON",
     "schema",

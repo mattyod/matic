@@ -1,3 +1,13 @@
+/*
+	version.js
+
+	Self invoking module.
+
+	Write out the current version number of the application.
+
+*/
+
+// Get application version from the package file.
 var version = require('../../package.json').version;
 
 module.exports = (function() {

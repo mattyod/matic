@@ -1,7 +1,7 @@
 /*
 	config.js
 
-		All general config values are stored here
+	Required config values are contained here.
 
 */
 

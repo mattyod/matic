@@ -2,17 +2,20 @@
 
   args.js
 
-  Check for any arguments passed with the call to schema and
-  route them accordingly
+  Check for any arguments passed with the call to schema and rout them
+  accordingly.
 
 */
 
 module.exports = (function() {
 
-  // Capture any arguments passed to shcema
+  // Capture any arguments passed to schema
   var args = process.argv.slice(2);
 
+  // If there are any.
   if(args.length) {
+
+    // Take the first and attempt to act upon it.
     switch(args[0]) {
       case '--help':
       case '-help':
@@ -28,7 +31,9 @@ module.exports = (function() {
         break;
       default:
         process.stdout.write('Unknown argument, try schema help');
+        
     }
+
   }
 
 })();

@@ -71,7 +71,7 @@ Example:
 For this example Matic will expect to find a folder at the project root called 'templates', which contains a template file named default.jade.
 
 ### Assets
-An array of files or folders that you want copied into your target folder. There is no assets reference by default within Matic, you will need to add your own config.json file to the project root if you want Matic to copy over any additional assets. Original assets will be left in un-touched.
+An array of files or folders that you want copied into your target folder. There is no assets reference by default within Matic, you will need to add your own config.json file to the project root if you want Matic to copy over any additional assets. Original assets will be left un-touched.
 
 Example:
 

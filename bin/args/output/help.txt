@@ -1,5 +1,5 @@
 
-Schema.js
+Matic.js
 ---------
 
   Arguments
@@ -10,19 +10,19 @@ Schema.js
 
     help, -help, --help, -h, --h:
 
-      Schema help.
+      Matic help.
 
     version
     -------
 
     version, -version, --version, -v, --v:
 
-      Display Schema.js version number.
+      Display Matic.js version number.
 
   Usage
   -----
 
-  Simply type 'schema', for more detailed information about how to set
+  Simply type 'matic', for more detailed information about how to set
   up a project folder for building please visit the github examples at
   https://github.com/mattyod/
 

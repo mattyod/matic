@@ -2,14 +2,14 @@
 
   args.js
 
-  Check for any arguments passed with the call to schema and rout them
+  Check for any arguments passed with the call to Matic and route them
   accordingly.
 
 */
 
 module.exports = (function() {
 
-  // Capture any arguments passed to schema
+  // Capture any arguments passed to Matic
   var args = process.argv.slice(2);
 
   // If there are any.
@@ -30,8 +30,8 @@ module.exports = (function() {
         require('./args/version');
         break;
       default:
-        process.stdout.write('Unknown argument, try schema help');
-        
+        process.stdout.write('Unknown argument, try matic help');
+
     }
 
   }

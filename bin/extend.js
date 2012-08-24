@@ -2,7 +2,7 @@
   
   extend.js
 
-  Checks if the folder from which Schema was invoked contains a config.js file
+  Checks if the folder from which Matic was invoked contains a config.js file
   If it does we load it in an extend our app config with any different settings
   it may have. This allows the user to over write any default values such as the
   target folder.

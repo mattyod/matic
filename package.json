@@ -1,7 +1,7 @@
 {
-  "name": "Schema",
+  "name": "Matic",
   "description": "Automated HTML documentation for JSON schemas",
-  "version": "0.1",
+  "version": "0.1.0",
   "keywords": [
     "JSON",
     "schema",
@@ -11,14 +11,14 @@
   "author": {
     "name": "Matthew O'Donoghue"
   },
-  "main": "./lib/schema.js",
-  "bin": "./bin/schema",
+  "main": "./lib/matic.js",
+  "bin": "./bin/matic",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattyod/schema"
+    "url": "https://github.com/mattyod/matic"
   },
   "bugs": {
-    "url": "https://github.com/mattyod/schema/issues"
+    "url": "https://github.com/mattyod/matic/issues"
   },
   "dependencies": {
     "underscore": "1.x"

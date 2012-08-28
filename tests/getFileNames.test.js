@@ -46,13 +46,22 @@ module.exports = {
 
   getSpecific: function(test) {
 
-    test.expect(1);
+    test.expect(4);
 
     // Call getFileNames with a suffix filter that exists
     var fileNames = getFileNames(config, 'testFiles', 'json');
 
-    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ],
-      'fileNames array is built without .txt file');
+    test.equal(fileNames.length, 3,
+      '4 file names are returned in an array');
+
+    test.ok(fileNames.indexOf('test1.json') >=0,
+      'Test1 is in the filenames array');
+
+    test.ok(fileNames.indexOf('test2.json') >=0,
+      'Test2 is in the filenames array');
+
+    test.ok(fileNames.indexOf('test3.json') >=0,
+      'Test3 is in the filenames array');
 
     test.done();
 
@@ -60,13 +69,25 @@ module.exports = {
 
   getAll: function(test) {
 
-    test.expect(1);
+    test.expect(5);
 
     // Call getFileNames without a file suffix filter
     var fileNames = getFileNames(config, 'testFiles');
 
-    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ],
-      'fileNames array is built with all files');
+    test.equal(fileNames.length, 4,
+      '4 file names are returned in an array');
+
+    test.ok(fileNames.indexOf('test1.json') >=0,
+      'Test1 is in the filenames array');
+
+    test.ok(fileNames.indexOf('test2.json') >=0,
+      'Test2 is in the filenames array');
+
+    test.ok(fileNames.indexOf('test3.json') >=0,
+      'Test3 is in the filenames array');
+
+    test.ok(fileNames.indexOf('test4.txt') >=0,
+      'Test4 is in the filenames array');
 
     test.done();
 

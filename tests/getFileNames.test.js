@@ -24,10 +24,10 @@ module.exports = {
 
       }
 
-      fs.writeFileSync('./testFiles/test4.txt', 'test file that should not be read');
-      fs.writeFileSync('./testFiles/test3.json', '{"test": "file 3"}');
-      fs.writeFileSync('./testFiles/test2.json', '{"test": "file 2"}');
       fs.writeFileSync('./testFiles/test1.json', '{"test": "file 1"}');
+      fs.writeFileSync('./testFiles/test2.json', '{"test": "file 2"}');
+      fs.writeFileSync('./testFiles/test3.json', '{"test": "file 3"}');
+      fs.writeFileSync('./testFiles/test4.txt', 'test file that should not be read');
 
       callback();
 

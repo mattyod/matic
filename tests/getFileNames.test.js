@@ -24,10 +24,10 @@ module.exports = {
 
       }
 
-      fs.writeFileSync('./testFiles/test1.json', '{"test": "file 1"}');
-      fs.writeFileSync('./testFiles/test2.json', '{"test": "file 2"}');
-      fs.writeFileSync('./testFiles/test3.json', '{"test": "file 3"}');
-      fs.writeFileSync('./testFiles/test4.txt', 'test file that should not be read');
+      fs.writeFileSync('./testFiles/a-test.json', '{"test": "file 1"}');
+      fs.writeFileSync('./testFiles/b-test.json', '{"test": "file 2"}');
+      fs.writeFileSync('./testFiles/c-test.json', '{"test": "file 3"}');
+      fs.writeFileSync('./testFiles/d-test.txt', 'test file that should not be read');
 
       callback();
 
@@ -51,7 +51,7 @@ module.exports = {
     // Call getFileNames with a suffix filter that exists
     var fileNames = getFileNames(config, 'testFiles', 'json');
 
-    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json' ],
+    test.deepEqual(fileNames, [ 'a-test.json', 'b-test.json', 'c-test.json' ],
       'fileNames array is built without .txt file');
 
     test.done();
@@ -65,7 +65,7 @@ module.exports = {
     // Call getFileNames without a file suffix filter
     var fileNames = getFileNames(config, 'testFiles');
 
-    test.deepEqual(fileNames, [ 'test1.json', 'test2.json', 'test3.json', 'test4.txt' ],
+    test.deepEqual(fileNames, [ 'a-test.json', 'b-test.json', 'c-test.json', 'd-test.txt' ],
       'fileNames array is built with all files');
 
     test.done();

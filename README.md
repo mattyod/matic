@@ -1,4 +1,4 @@
-# Matic
+# Matic [![Build Status](https://secure.travis-ci.org/mattyod/matic.png?branch=master)](http://travis-ci.org/mattyod/matic)
 A Node.js build tool for generating HTML documentation from JSON schemas.
 
 Matic is currently in an Alpha state of development and whilst usable is quite far from being a complete and production ready tool.

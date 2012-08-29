@@ -1,6 +1,9 @@
 // Tested module
 var extend = require('../bin/extend.js');
 
+// helper moduls
+var path = require('path');
+
 // Our expected extended object
 var expectedResult = {
   "test": "User mock config",
@@ -16,10 +19,10 @@ module.exports = {
     };
 
     // Store the process invokation path
-    this.oldProcessPath = process.env.PWD;
+    this.oldProcessPath = process.cwd();
 
     // Adjust the process invokation path to point into our test folder temporarily
-    process.env.PWD += '/tests/testFiles';
+    process.chdir(process.cwd() + path.sep + 'tests' + path.sep + 'testFiles');
 
     callback();
 
@@ -28,7 +31,7 @@ module.exports = {
   tearDown: function(callback) {
     
     // Restore the process invokation path
-    process.env.PWD = this.oldProcessPath;
+    process.chdir(this.oldProcessPath);
 
     callback();
 

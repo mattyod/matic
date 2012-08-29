@@ -28,13 +28,13 @@ module.exports = {
     this.path = __dirname.replace(/tests/, 'bin' + path.sep + 'args');
 
     // Remove args.js from the require cache
-    unrequire('bin/args');
+    unrequire('bin' + path.sep + 'args');
   
     // Remove help.js from the require.cache
-    unrequire('bin/args/help');
+    unrequire('bin' + path.sep + 'args' + path.sep + 'help');
 
     // Remove version.js from the require.cache
-    unrequire('bin/args/version');
+    unrequire('bin' + path.sep + 'args' + path.sep + 'version');
 
     callback();
 

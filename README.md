@@ -3,7 +3,7 @@ A Node.js build tool for generating HTML documentation from JSON schemas.
 
 Matic is currently in an Alpha state of development and whilst usable is quite far from being a complete and production ready tool.
 
-Current development has been based on [draft JSON schema 03](http://tools.ietf.org/html/draft-zyp-json-schema-03) but as specification for draft 04 emerge in more detail the aim is to addapt as quickly as possible to any changes that may bring.
+Current development has been based on [draft JSON schema 03](http://tools.ietf.org/html/draft-zyp-json-schema-03) but as specification for draft 04 emerge in more detail the aim is to adapt as quickly as possible to any changes that may bring.
 
 ## Installation
 Use NPM to install globally with:
@@ -14,23 +14,30 @@ To confirm installation you should now be able to run the command:
 
     matic -v
 
-Which should should output the currently installed version of Matic.
+Which should output the currently installed version of Matic.
 
 ## Building documentation
 From the root of your project simply type:
 
     matic
 
-For an example of how to structure your project folder before you do this take a look at [as yet unbuilt example project](https://github.com/mattyod/matic-simple-example). But essentially you will need a folder with at least one schema in it and another folder with at least one template file in it. Currently Matic has only been tested with Jade templates but in theory should work with any templating language that uses the methods compile() and render().
+For an examples of how to structure your project folder there are currently two examples available both of which are full project folder that have not yet been built with Matic: 
+
+  * [very simple example](https://github.com/mattyod/matic-very-simple-example). Which contains one schema file and one template file.
+  * [simple example](https://github.com/mattyod/matic-simple-example). Which contains one schema file and a more structured template set up with includes and mixins.
+
+A more complex example that includes sub schemas will follow shortly.
+
+Essentially you will need a folder with at least one schema in it and another folder with at least one template file in it. Currently Matic has only been tested with Jade templates but in theory should work with any templating language that uses the methods compile() and render().
 
 Initially Matic's config is set to look for a main template with the filename default.jade but this can be over-ridden with a project level config file, see below.
 
 By default Matic will then use your template(s) and schema(s) to output a set of HTML files into a new folder called 'web', again this can be over-ridden with a local config file.
 
 ## Setting config options
-Various default paths and paramaters are set by default within Matic's internal config file. Any of these paramaters can be over-ridden on a project by project basis by creating your own config.json object file at the project root.
+Various default paths and parameters are set by default within Matic's internal config file. Any of these parameters can be over-ridden on a project by project basis by creating your own config.json object file at the project root.
 
-The default config contains the following paramaters:
+The default config contains the following parameters:
 
 ### Source
 This is the source folder that Matic will look in for JSON schema files. These files can have any name but must be of type .json.
@@ -49,7 +56,7 @@ Example:
 ### Template
 This is an object containing details of the templating language that you intend Matic to use to generate your HTML output with. Please note at this time no testing has been carried out with any other language than Jade. It should work for others in theory but until I test that, you have been warned.
 
-Paramaters within the template object are:
+Parameters within the template object are:
 
 #### Path
 The path to your template files.

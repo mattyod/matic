@@ -43,17 +43,17 @@ module.exports = {
 
   },
 
-  test: function(test) {
+  build: function(test) {
 
     test.expect(4);
 
-    test.ok(!fs.existsSync(this.config.target), 
+    test.ok(!fs.existsSync(this.config.target),
       'Target folder does not yet exist');
 
     // Run the build module.
     build(this.config, this.files);
 
-    test.ok(fs.existsSync(this.config.target), 
+    test.ok(fs.existsSync(this.config.target),
       'Target folder is created');
 
     test.ok(fs.existsSync(this.config.target + 'one.html'),

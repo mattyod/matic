@@ -1,7 +1,7 @@
 // Tested module
 var extend = require('../bin/extend.js');
 
-// helper moduls
+// helper modules
 var path = require('path');
 
 // Our expected extended object

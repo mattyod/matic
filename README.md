@@ -105,4 +105,4 @@ This example instructs Matic to copy two folders named `css` and `js` into the t
 
 ## Licence
 
-[MIT](https://github.com/mattyod/matics/blob/master/LICENSE)
+[MIT](https://raw.github.com/mattyod/matic/master/LICENSE)

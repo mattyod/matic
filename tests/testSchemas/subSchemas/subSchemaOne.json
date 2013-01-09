@@ -1,9 +1,7 @@
 {
-  "subSchema": {
-    "name": "Test sub schema one",
-    "description": "This schema should be included by our main test schema. It is for test purposes only and does not represent and actual JSON object.",
-    "subSubSchema": {
-      "$ref": "subSchemas/subSchemaTwo.json"
-    }
+  "name": "Test sub schema one",
+  "description": "This schema should be included by our main test schema. It is for test purposes only and does not represent and actual JSON object.",
+  "subSubSchema": {
+    "$ref": "subSchemas/subSchemaTwo.json"
   }
 }

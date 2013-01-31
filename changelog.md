@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 31 January 2012, 0.2.1
+* Indentation on bin files
+
 ### 09 January 2012, 0.2.0
 * Sub schemas no longer assumed to have a parent key. This is a significant
 change if you have been including sub-schema's with Matic.
@@ -32,6 +35,8 @@ This is no longer the case and sub schema's are expected now to look like:
       "id": "theThings",
       "properties": {...}
     }
+
+README updated thanks to [Nick Lombard](https://github.com/nickl-)
 
 ### 05 September 2012, 0.1.4
 * Renamed test for build.js

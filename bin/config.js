@@ -1,15 +1,15 @@
 /*
-	config.js
+  config.js
 
-	Required config values are contained here.
+  Required config values are contained here.
 
 */
 
 module.exports = (function() {
-	
+
   return {
-		'source': './schemas/',
-		'target': './web/',
+    'source': './schemas/',
+    'target': './web/',
     'schemas': './schemas/',
     'template': {
       'path': './templates/',
@@ -17,6 +17,6 @@ module.exports = (function() {
       'lib': 'jade'
     }
     
-	};
+  };
 
 })();

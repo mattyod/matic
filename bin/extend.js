@@ -17,13 +17,13 @@ var fs    = require('fs'),
     _     = require('underscore'),
     path  = require('path');
 
-module.exports = function(config) {
+module.exports = function (config) {
 
   // Build the config file path from the current process path
   var configPath = process.cwd() + path.sep + 'config.json';
   
   // If there is a config.json file in the build folder
-  if(fs.existsSync(configPath)) {
+  if (fs.existsSync(configPath)) {
 
     // Read it and extend the existing config with it
     config = _.extend(config, JSON.parse(fs.readFileSync(configPath, 'binary')));

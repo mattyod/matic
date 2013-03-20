@@ -7,7 +7,7 @@
 
 */
 
-module.exports = function(config) {
+module.exports = function (config) {
 
   return '\nDocumentation built to ' + config.target + '\n\n';
 

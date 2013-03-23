@@ -1,9 +1,12 @@
 # Matic Changelog
 
-### 31 January 2012, 0.2.1
+### 23 March 2013, 0.2.2
+* Added links to generated examples in README
+
+### 31 January 2013, 0.2.1
 * Indentation on bin files
 
-### 09 January 2012, 0.2.0
+### 09 January 2013, 0.2.0
 * Sub schemas no longer assumed to have a parent key. This is a significant
 change if you have been including sub-schema's with Matic.
 Previously it was incorrectly assumed that a sub schema would have a parent key

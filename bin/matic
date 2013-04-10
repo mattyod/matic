@@ -6,16 +6,19 @@ require('./args');
 // Otherwise get the app requirements
 var matic   = require('../lib/matic.js'),
     config  = require('./config'),
+    check   = require('./check'),
     extend  = require('./extend'),
     done    = require('./done');
 
 // Extend local config with a project based one if it exists.
 config = extend(config);
 
-// Generate schema documentation with the config.
-if(matic.generate(config)) {
-  
-  // Let the user know that build is complete.
-  process.stdout.write(done(config));
+if (check(config)) {
+  // Generate schema documentation with the config.
+  if (matic.generate(config)) {
+    
+    // Let the user know that build is complete.
+    process.stdout.write(done(config));
 
+  }
 }

@@ -1,5 +1,9 @@
 # Matic Changelog
 
+### 10 April 2013, 0.2.3
+* Graceful checking and failure of template engine requirement
+* Updated Node versions in package.json
+
 ### 23 March 2013, 0.2.2
 * Added links to generated examples in README
 

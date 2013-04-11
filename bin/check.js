@@ -7,6 +7,7 @@
 */
 
 module.exports = function (config) {
+  var valid = false;
 
   var msgs = {
         configError: "The config file does not specify a templating engine, please add one.\n",
@@ -21,10 +22,13 @@ module.exports = function (config) {
 
     try {
       require.resolve(config.template.lib);
+      valid = true;
     } catch (error) {
       process.stdout.write(msgs.requireError);
     }
   } else {
     process.stdout.write(msgs.configError)
   }
+
+  return valid;
 };

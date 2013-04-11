@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 11 April 2013, 0.2.4
+* Fixed critical issue introduced in 0.2.3 around template engine checking
+
 ### 10 April 2013, 0.2.3
 * Graceful checking and failure of template engine requirement
 * Updated Node versions in package.json

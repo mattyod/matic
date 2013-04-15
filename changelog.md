@@ -1,5 +1,9 @@
 # Matic Changelog
 
+### 15 April 2013, 0.2.5
+* Schema merging properly determines between object literals and arrays for
+entries such as enum
+
 ### 11 April 2013, 0.2.4
 * Fixed critical issue introduced in 0.2.3 around template engine checking
 

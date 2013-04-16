@@ -3,7 +3,7 @@ var mergeSchemas = require('../lib/mergeSchemas');
 
 // Helper modules
 var fs      = require('fs'),
-    config  = require('../lib/config');
+    config  = require('../bin/config');
 
 module.exports = {
 

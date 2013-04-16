@@ -1,5 +1,5 @@
 // Tested module
-var config = require('../lib/config');
+var config = require('../bin/config');
 
 module.exports = {
   

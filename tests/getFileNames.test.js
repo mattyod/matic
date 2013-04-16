@@ -3,7 +3,7 @@ var getFileNames = require('../lib/getFileNames');
 
 // Helper modules
 var fs            = require('fs'),
-    config        = require('../lib/config')
+    config        = require('../bin/config')
     rmdirSyncRec  = require('../lib/rmdirSyncRec');
 
 module.exports = {

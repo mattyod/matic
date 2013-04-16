@@ -12,6 +12,7 @@ module.exports = {
 
     // Mock config object.
     this.config = {
+      suffix: '.html',
       template: {
         lib: 'jade',
         path: 'testTemplates'

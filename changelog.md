@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 16 April 2013, 0.2.7
+* Fixed failing tests
+
 ### 16 April 2013, 0.2.6
 * Added suffix to config file so files other than .html can be output
 * Removed copy of config from lib

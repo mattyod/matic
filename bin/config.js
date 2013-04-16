@@ -11,6 +11,7 @@ module.exports = (function () {
     'source': './schemas/',
     'target': './web/',
     'schemas': './schemas/',
+    'suffix': '.html',
     'template': {
       'path': './templates/',
       'file': 'default',

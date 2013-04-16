@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 16 April 2013, 0.2.6
+* Removed copy of config from lib
+
 ### 15 April 2013, 0.2.5
 * Schema merging properly determines between object literals and arrays for
 entries such as enum

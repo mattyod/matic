@@ -46,9 +46,10 @@ module.exports = {
 
   },
 
-  build: function(test) {
+  // Test building from a single specified template file
+  buildSingleTemplate: function(test) {
 
-    test.expect(4);
+    test.expect(6);
 
     test.ok(!fs.existsSync(this.config.target),
       'Target folder does not yet exist');
@@ -62,11 +63,56 @@ module.exports = {
     test.ok(fs.existsSync(this.config.target + 'one.html'),
       'First html file generated from template');
 
+    test.equal(fs.readFileSync(this.config.target + 'one.html', 'binary'),
+      '<h1>test file one</h1>',
+      'one.html generated as expected');
+
     test.ok(fs.existsSync(this.config.target + 'two.html'),
       'Second html file generated from template');
 
+    test.equal(fs.readFileSync(this.config.target + 'two.html', 'binary'),
+      '<h1>test file two</h1>',
+      'one.html generated as expected');
+
     test.done();
 
+  },
+
+  // Test building from multiple specified template files
+  buildMultipleTemplate: function (test) {
+
+    test.expect(6);
+
+    // Extend the templates config to include two template files
+    this.files.templates = {
+      fileNames: ['one.jade', 'two.jade'],
+      contents: ["h1 #{name}", "h2 #{name}"]
+    }
+
+    test.ok(!fs.existsSync(this.config.target),
+      'Target folder does not yet exist');
+
+    // Run the build module.
+    build(this.config, this.files);
+
+    test.ok(fs.existsSync(this.config.target),
+      'Target folder is created');
+
+    test.ok(fs.existsSync(this.config.target + 'one.html'),
+      'First html file generated from template');
+
+    test.equal(fs.readFileSync(this.config.target + 'one.html', 'binary'),
+      '<h1>test file one</h1>',
+      'one.html generated as expected');
+
+    test.ok(fs.existsSync(this.config.target + 'two.html'),
+      'Second html file generated from template');
+
+    test.equal(fs.readFileSync(this.config.target + 'two.html', 'binary'),
+      '<h2>test file two</h2>',
+      'two.html generated as expected');
+
+    test.done();
   }
   
 };

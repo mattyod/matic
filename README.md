@@ -73,6 +73,30 @@ This is an object containing details of the templating language which you intend
 
 The template configuration object has the following settings:
 
+#### Folder [false]
+Boolean flag that indicates whether Matic should map multiple template files to corresponding schemas schemas. So for example a folder structure such as:
+
+```
+|____templates
+| |____one.jade
+| |____two.jade
+|____schemas
+| |____one.json
+| |____two.json
+```
+
+Will generate an output folder such as:
+
+```
+|____web
+| |____one.html
+| |____two.html
+```
+
+Using the corresponding templates and schemas.
+
+**N.B.** It is not necessary to specify a file attribute within the templates object if mapping a folder like this, however, if there are schemas that do not map directly to template files Matic will attempt to use a file name specified in the file attribute as a default template.
+
 #### Path [./templates/]
 The path to your template files.
 
@@ -85,6 +109,7 @@ Name of the template library to use. **Note:** Matic will assume that the templa
 Example:
 ```json
 "template": {
+  "folder": false,
   "path": "./templates/",
   "file": "default",
   "lib": "jade"

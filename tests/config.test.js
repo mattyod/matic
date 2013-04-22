@@ -5,13 +5,16 @@ module.exports = {
   
   config: function(test) {
 
-    test.expect(6);
+    test.expect(7);
 
-    test.ok(config.source,
-      'source reference exists');
-    
     test.ok(config.target,
       'target reference exists');
+
+    test.ok(config.schemas,
+      'schemas source reference exists');
+
+    test.ok(config.suffix,
+      'generated file suffix reference exists');
 
     test.ok(config.template,
       'template object exits');

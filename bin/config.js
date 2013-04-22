@@ -8,7 +8,6 @@
 module.exports = (function () {
 
   return {
-    'source': './schemas/',
     'target': './web/',
     'schemas': './schemas/',
     'suffix': '.html',

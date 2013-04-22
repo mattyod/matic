@@ -15,6 +15,7 @@ module.exports = {
       suffix: '.html',
       template: {
         lib: 'jade',
+        file: 'one',
         path: 'testTemplates'
       },
       target: 'tests/buildTestOutput/'
@@ -23,6 +24,7 @@ module.exports = {
     // Mock files object.
     this.files = {
       templates: {
+        fileNames: ['one.jade'],
         contents: ["h1 #{name}"]
       },
       schemas: {

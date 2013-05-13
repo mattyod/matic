@@ -79,7 +79,7 @@ module.exports = {
   },
 
   // Test building from multiple specified template files
-  buildMultipleTemplate: function (test) {
+  buildMultipleTemplates: function (test) {
 
     test.expect(6);
 

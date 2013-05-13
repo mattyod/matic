@@ -12,7 +12,7 @@ module.exports = (function () {
     'schemas': './schemas/',
     'suffix': '.html',
     'template': {
-      'folder': false,
+      'folder': true,
       'path': './templates/',
       'file': 'default',
       'lib': 'jade'

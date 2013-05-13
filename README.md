@@ -43,7 +43,7 @@ Essentially you will need
  * a folder with at least one template file
  * an optional config file for custom settings
 
-The default global configuration looks for a main template with filename `default.jade` which can be customized with a project level config file, [see below](#setting-config-options).
+The default global configuration looks for a main template with filename `default.jade` which can be customized with a project level config file, ([see below](#setting-config-options)).
 
 By default Matic will use your template(s) and schema(s) to generate a set of HTML files into a folder named `web`, this can also be modified through the local config file.
 
@@ -68,13 +68,23 @@ Example:
 {"target": "./web/"}
 ```
 
+### Suffix [.html]
+Suffix to apply to generated files. As an example you might change this to '.md' and generate markdown pages for a github wiki.
+
+Example:
+```json
+{"suffix": ".html"}
+```
+
 ### Template
 This is an object containing details of the templating language which you intend Matic to use to generate the HTML output. Please note only support for Jade has been tested to date, although it should work equally well with other libraries which implement the `compile()` and `render()` methods. If you do happen to have the opportunity to test Matic with an alternative provider, please report back with your findings.
 
 The template configuration object has the following settings:
 
-#### Folder [false]
-Boolean flag that indicates whether Matic should map multiple template files to corresponding schemas schemas. So for example a folder structure such as:
+#### Folder [true]
+Boolean flag that indicates whether Matic should map multiple template files to corresponding schemas. Significantly this allows for a greater verbosity when documenting more than one schema as each template can contain any extra explanations or examples specific to the relevant schema.
+
+So for example, when set to true, a folder structure such as:
 
 ```
 |____templates
@@ -93,15 +103,27 @@ Will generate an output folder such as:
 | |____two.html
 ```
 
-Using the corresponding templates and schemas.
+Where both schemas have been rendered through their corresponding templates.
 
-**N.B.** It is not necessary to specify a file attribute within the templates object if mapping a folder like this, however, if there are schemas that do not map directly to template files Matic will attempt to use a file name specified in the file attribute as a default template.
+**N.B.** It is not necessary to specify a file attribute ([see below](#file-default)) within the templates object if mapping a folder like this, however, if there are schemas that do not map directly to template files, i.e. have the same name, Matic will attempt to use the file specified by the file attribute as a default template.
+
+Similarly if the folder attribute is set to false Matic will just map all schemas to the file specified by the 'file' attribute, which is 'default' by default. Each generated file will take the name of it's schema so a starting structure such as:
+
+```
+|____templates
+| |____default.jade
+|____schemas
+| |____one.json
+| |____two.json
+```
+
+Will generate the same output web folder as above but both output files will have been passed through default.jade schema.
 
 #### Path [./templates/]
-The path to your template files.
+The path to your template files folder.
 
 #### File [default]
-The name of your primary template file.
+The name of your primary template file which should be at the top level of the templates folder specified in the 'path' attribute.
 
 #### Lib [jade]
 Name of the template library to use. **Note:** Matic will assume that the template files have the same extension. i.e. default.jade

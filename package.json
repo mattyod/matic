@@ -1,7 +1,7 @@
 {
   "name": "matic",
   "description": "Automated HTML documentation for JSON schemas",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "keywords": [
     "JSON",
     "schema",
@@ -24,9 +24,9 @@
     "underscore": "1.x"
   },
   "devDependencies": {
-    "sinon": "1.4.x",
-    "nodeunit": "0.7.x",
-    "jade": "0.27.x"
+    "sinon": "1.6.x",
+    "nodeunit": "0.8.x",
+    "jade": "0.28.x"
   },
   "scripts": {
     "test": "nodeunit tests"

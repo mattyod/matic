@@ -8,11 +8,11 @@
 module.exports = (function () {
 
   return {
-    'source': './schemas/',
     'target': './web/',
     'schemas': './schemas/',
     'suffix': '.html',
     'template': {
+      'folder': true,
       'path': './templates/',
       'file': 'default',
       'lib': 'jade'

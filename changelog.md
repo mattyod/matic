@@ -1,5 +1,15 @@
 # Matic Changelog
 
+### 13 May 2013, 0.3.0
+* Suffix attribute added to the config object allowing the generation of file
+formats other than .html
+* Folder attribute added to the template object within the config object. If set
+to true Matic will attempt to map identically named schemas to templates. If it
+fails to find a match it will fall back to the default template if named in
+the file attribute of the template object
+* Edited 0.2.0 changelog entry for clarity
+* Dev dependencies versions updated
+
 ### 16 April 2013, 0.2.7
 * Fixed failing tests
 
@@ -41,7 +51,7 @@ So a master schema such as:
       }
     }
 
-Would expect the sub schema 'things.json' to take the following format:
+Would have expected the sub schema 'things.json' to take the following format:
 
     {
       "things": {

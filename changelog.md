@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 14 May 2013, 0.3.1
+* Updated readme install instructions for npm
+
 ### 13 May 2013, 0.3.0
 * Suffix attribute added to the config object allowing the generation of file
 formats other than .html

@@ -8,7 +8,7 @@ Current development was based on the [draft JSON schema 03](http://tools.ietf.or
 ## Installation
 Use NPM to install globally:
 
-    $ npm install -g
+    $ npm install -g matic
 
 A sure indication that matic is installed and operational, which also retrieves the current version number, is to run the command:
 

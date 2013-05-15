@@ -24,8 +24,7 @@ There are currently two example projects available, which are full project folde
 
   * [very simple example](https://github.com/mattyod/matic-very-simple-example). Which contains one schema file and one template file. [Generated mark up](http://mattyod.github.com/matic-very-simple-example/).
   * [simple example](https://github.com/mattyod/matic-simple-example). Which contains one schema file and a more structured template set-up with includes and mixins. [Generated mark up](http://mattyod.github.com/matic-simple-example/).
-
-A more complex example which includes sub schema support is currently underway and will be available shortly.
+  * [example](https://github.com/mattyod/matic-example). Which contains a schema and a sub schema as well as a more structured template set-up with includes and mixins. [Generated mark up](http://mattyod.github.com/matic-example/).
 
 A typical layout using default settings:
 

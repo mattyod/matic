@@ -1,5 +1,9 @@
 # Matic Changelog
 
+### 15 May 2013, 0.3.2
+* Updated readme with links to matic-example. A more complete example repo with
+sub schema and template includes/mixins.
+
 ### 14 May 2013, 0.3.1
 * Updated readme install instructions for npm
 

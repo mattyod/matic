@@ -1,7 +1,7 @@
 {
   "name": "matic",
   "description": "Automated HTML documentation for JSON schemas",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "keywords": [
     "JSON",
     "schema",

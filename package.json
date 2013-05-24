@@ -33,7 +33,7 @@
     "test": "nodeunit tests"
   },
   "engines": {
-    "node": ">=0.8.x <=0.10.x",
+    "node": ">=0.8 <0.11",
     "npm": "1.2.x"
   }
 }

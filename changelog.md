@@ -1,8 +1,12 @@
 # Matic Changelog
 
+### 24 May 2013, 0.3.4
+* Engine version syntax corrected in package.json
+
 ### 24 May 2013, 0.3.3
 * Added 'preferGlobal' to package.json so that non '-g' npm installs offer a
 warning
+* Typo in build.js comments corrected
 
 ### 15 May 2013, 0.3.2
 * Updated readme with links to matic-example. A more complete example repo with

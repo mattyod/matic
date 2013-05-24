@@ -1,8 +1,12 @@
 # Matic Changelog
 
+### 24 May 2013, 0.3.3
+* Added 'preferGlobal' to package.json so that non '-g' npm installs offer a
+warning
+
 ### 15 May 2013, 0.3.2
 * Updated readme with links to matic-example. A more complete example repo with
-sub schema and template includes/mixins.
+sub schema and template includes/mixins
 
 ### 14 May 2013, 0.3.1
 * Updated readme install instructions for npm

@@ -1,7 +1,7 @@
 {
   "name": "matic",
   "description": "Automated HTML documentation for JSON schemas",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "keywords": [
     "JSON",
     "schema",
@@ -13,6 +13,7 @@
   },
   "main": "./lib/matic.js",
   "bin": "./bin/matic",
+  "preferGlobal" : "true",
   "repository": {
     "type": "git",
     "url": "https://github.com/mattyod/matic"

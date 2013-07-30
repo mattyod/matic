@@ -26,7 +26,7 @@ module.exports = function (config) {
   if (fs.existsSync(configPath)) {
 
     // Read it and extend the existing config with it
-    config = _.extend(config, JSON.parse(fs.readFileSync(configPath, 'binary')));
+    config = _.extend(config, JSON.parse(fs.readFileSync(configPath, 'utf8')));
 
   }
 

@@ -13,7 +13,7 @@
   },
   "main": "./lib/matic.js",
   "bin": "./bin/matic",
-  "preferGlobal" : "true",
+  "preferGlobal": "true",
   "repository": {
     "type": "git",
     "url": "https://github.com/mattyod/matic"

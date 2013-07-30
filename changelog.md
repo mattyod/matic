@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 30 July 2013, 0.3.5
+* Swithched from binary to utf8 encoding for file reads.
+
 ### 24 May 2013, 0.3.4
 * Engine version syntax corrected in package.json
 

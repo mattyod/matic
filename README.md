@@ -147,7 +147,7 @@ Example:
 {"assets": ["css", "js"]}
 ```
 
-This example instructs Matic to copy two folders named `css` and `js` into the target build folder. Copying is done recursively which includes all files and sub folders.
+This example instructs Matic to copy two folders named `css` and `js` into the target build folder. Copying is done recursively so includes all files and sub folders.
 
 ## Licence
 

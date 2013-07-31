@@ -20,10 +20,10 @@ From the root of your project folder simply run:
     $ matic
 
 ### Example projects
-There are currently two example projects available, which are full project folders not yet built with Matic, to aid as examples of how to structure your project folder to work with Matic: 
+There three example projects available, which are full project folders not yet built with Matic, to aid as examples of how to structure your project folder to work with Matic: 
 
-  * [very simple example](https://github.com/mattyod/matic-very-simple-example). Which contains one schema file and one template file. [Generated mark up](http://mattyod.github.com/matic-very-simple-example/).
-  * [simple example](https://github.com/mattyod/matic-simple-example). Which contains one schema file and a more structured template set-up with includes and mixins. [Generated mark up](http://mattyod.github.com/matic-simple-example/).
+  * [very simple example](https://github.com/mattyod/matic-very-simple-example). Which contains one schema file and one template file. [Very simple generated mark up](http://mattyod.github.com/matic-very-simple-example/).
+  * [simple example](https://github.com/mattyod/matic-simple-example). Which contains one schema file and a more structured template set-up with includes and mixins. [Simple generated mark up](http://mattyod.github.com/matic-simple-example/).
   * [example](https://github.com/mattyod/matic-example). Which contains a schema and a sub schema as well as a more structured template set-up with includes and mixins. [Generated mark up](http://mattyod.github.com/matic-example/).
 
 A typical layout using default settings:

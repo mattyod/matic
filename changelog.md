@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 03 August 2013, 0.3.6
+Updated readme example to reflect defaults for version 0.3.x
+
 ### 30 July 2013, 0.3.5
 * Swithched from binary to utf8 encoding for file reads.
 

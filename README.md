@@ -130,7 +130,7 @@ Name of the template library to use. **Note:** Matic will assume that the templa
 Example:
 ```json
 "template": {
-  "folder": false,
+  "folder": true,
   "path": "./templates/",
   "file": "default",
   "lib": "jade"

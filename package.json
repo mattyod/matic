@@ -1,7 +1,7 @@
 {
   "name": "matic",
   "description": "Automated HTML documentation for JSON schemas",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "keywords": [
     "JSON",
     "schema",
@@ -33,7 +33,6 @@
     "test": "nodeunit tests"
   },
   "engines": {
-    "node": ">=0.8 <0.11",
-    "npm": "1.2.x"
+    "node": ">=0.8 <0.11"
   }
 }

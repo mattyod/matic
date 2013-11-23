@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 	version.js
 
@@ -10,7 +12,7 @@
 // Get application version from the package file.
 var version = require('../../package.json').version;
 
-module.exports = (function() {
+module.exports = (function () {
 
   // Write out the version to the terminal
   process.stdout.write('matic: v' + version + '\n');

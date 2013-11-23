@@ -1,9 +1,11 @@
+'use strict';
+
 // Tested module
 var config = require('../bin/config');
 
 module.exports = {
-  
-  config: function(test) {
+
+  config: function (test) {
 
     test.expect(7);
 

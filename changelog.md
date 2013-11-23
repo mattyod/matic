@@ -1,10 +1,13 @@
 # Matic Changelog
 
+### 23 November 2013, 0.3.7
+* Added .jshintrc rule set and linted accordingly
+
 ### 03 August 2013, 0.3.6
-Updated readme example to reflect defaults for version 0.3.x
+* Updated readme example to reflect defaults for version 0.3.x
 
 ### 30 July 2013, 0.3.5
-* Swithched from binary to utf8 encoding for file reads.
+* Swithched from binary to utf8 encoding for file reads
 
 ### 24 May 2013, 0.3.4
 * Engine version syntax corrected in package.json

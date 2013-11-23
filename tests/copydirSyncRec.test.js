@@ -1,3 +1,5 @@
+'use strict';
+
 // Tested module
 var copydirSyncRec = require('../lib/copydirSyncRec');
 
@@ -31,8 +33,8 @@ var targetSubFolder = targetFolder + path.sep + 'subFolder';
 var targetSubFile = targetSubFolder + path.sep + 'copyThisToo.txt';
 
 module.exports = {
-  
-  setUp: function(callback) {
+
+  setUp: function (callback) {
 
     // Create a test folder that will be copied.
     fs.mkdirSync(testFolder);
@@ -45,12 +47,12 @@ module.exports = {
 
     // Add a file to that.
     fs.writeFileSync(testSubFile, 'Some text');
-    
+
     callback();
 
   },
 
-  tearDown: function(callback) {
+  tearDown: function (callback) {
 
     // Clean up test folder.
     rmdirSyncRec(testFolder);
@@ -62,8 +64,8 @@ module.exports = {
 
   },
 
-  copydirSyncRec: function(test) {
-    
+  copydirSyncRec: function (test) {
+
     // Copy test folder to target location.
     copydirSyncRec(testFolder, targetFolder);
 
@@ -82,5 +84,5 @@ module.exports = {
     test.done();
 
   }
-  
+
 };

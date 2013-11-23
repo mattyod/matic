@@ -1,3 +1,5 @@
+'use strict';
+
 /*
     check.js
 
@@ -10,15 +12,15 @@ module.exports = function (config) {
   var valid = false;
 
   var msgs = {
-        configError: "The config file does not specify a templating engine, please add one.\n",
-        requireError: ""
-      };
+    configError: 'The config file does not specify a templating engine, please add one.\n',
+    requireError: ''
+  };
 
   if (config.template && config.template.lib) {
 
-    msgs.requireError = "The config file speicifies " + config.template.lib + 
-    " as the templating engine but it is not installed. \nPlease run: \n" +
-    "npm install -g " + config.template.lib + "\n";
+    msgs.requireError = 'The config file speicifies ' + config.template.lib +
+    ' as the templating engine but it is not installed. \nPlease run: \n' +
+    'npm install -g ' + config.template.lib + '\n';
 
     try {
       require.resolve(config.template.lib);
@@ -27,7 +29,7 @@ module.exports = function (config) {
       process.stdout.write(msgs.requireError);
     }
   } else {
-    process.stdout.write(msgs.configError)
+    process.stdout.write(msgs.configError);
   }
 
   return valid;

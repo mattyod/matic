@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 // Handle any passed arguments
 require('./args');
 
@@ -16,7 +18,7 @@ config = extend(config);
 if (check(config)) {
   // Generate schema documentation with the config.
   if (matic.generate(config)) {
-    
+
     // Let the user know that build is complete.
     process.stdout.write(done(config));
 

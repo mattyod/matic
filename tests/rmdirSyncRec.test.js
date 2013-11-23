@@ -1,3 +1,5 @@
+'use strict';
+
 // Tested module
 var rmdirSyncRec = require('../lib/rmdirSyncRec');
 
@@ -18,8 +20,8 @@ var testSubFolder = testFolder + path.sep + 'subFolder';
 var testSubFile = testSubFolder + path.sep + 'deleteThisToo.txt';
 
 module.exports = {
-  
-  setUp: function(callback) {
+
+  setUp: function (callback) {
 
     // Create a test folder that will be deleted.
     fs.mkdirSync(testFolder);
@@ -37,13 +39,13 @@ module.exports = {
 
   },
 
-  tearDown: function(callback) {
+  tearDown: function (callback) {
 
-    callback(); 
+    callback();
 
   },
 
-  rmdirRecSync: function(test) {
+  rmdirRecSync: function (test) {
     test.expect(4);
 
     // Remove the files and folders created in set up.

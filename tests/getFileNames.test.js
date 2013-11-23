@@ -1,26 +1,28 @@
+'use strict';
+
 // Tested module
 var getFileNames = require('../lib/getFileNames');
 
 // Helper modules
 var fs            = require('fs'),
-    config        = require('../bin/config')
+    config        = require('../bin/config'),
     rmdirSyncRec  = require('../lib/rmdirSyncRec');
 
 module.exports = {
 
-  setUp: function(callback) {
+  setUp: function (callback) {
 
     config.testFiles = './testFiles';
 
-    fs.mkdir('testFiles', function(err) {
+    fs.mkdir('testFiles', function (err) {
 
-    if(err) {
-      
-      process.stdout.write('\n"testFiles" folder already exists please delete it and run again.\n');
-      
-      process.stdout.write('This is probably because teardown failed to run on one of your previous tests.\n');
-      
-      return;
+      if (err) {
+
+        process.stdout.write('\n"testFiles" folder already exists please delete it and run again.\n');
+
+        process.stdout.write('This is probably because teardown failed to run on one of your previous tests.\n');
+
+        return;
 
       }
 
@@ -35,7 +37,7 @@ module.exports = {
 
   },
 
-  tearDown: function(callback) {
+  tearDown: function (callback) {
 
     // Tidy up
     rmdirSyncRec('testFiles');
@@ -44,7 +46,7 @@ module.exports = {
 
   },
 
-  getSpecific: function(test) {
+  getSpecific: function (test) {
 
     test.expect(4);
 
@@ -54,20 +56,20 @@ module.exports = {
     test.equal(fileNames.length, 3,
       '4 file names are returned in an array');
 
-    test.ok(fileNames.indexOf('test1.json') >=0,
+    test.ok(fileNames.indexOf('test1.json') >= 0,
       'Test1 is in the filenames array');
 
-    test.ok(fileNames.indexOf('test2.json') >=0,
+    test.ok(fileNames.indexOf('test2.json') >= 0,
       'Test2 is in the filenames array');
 
-    test.ok(fileNames.indexOf('test3.json') >=0,
+    test.ok(fileNames.indexOf('test3.json') >= 0,
       'Test3 is in the filenames array');
 
     test.done();
 
   },
 
-  getAll: function(test) {
+  getAll: function (test) {
 
     test.expect(5);
 
@@ -77,23 +79,23 @@ module.exports = {
     test.equal(fileNames.length, 4,
       '4 file names are returned in an array');
 
-    test.ok(fileNames.indexOf('test1.json') >=0,
+    test.ok(fileNames.indexOf('test1.json') >= 0,
       'Test1 is in the filenames array');
 
-    test.ok(fileNames.indexOf('test2.json') >=0,
+    test.ok(fileNames.indexOf('test2.json') >= 0,
       'Test2 is in the filenames array');
 
-    test.ok(fileNames.indexOf('test3.json') >=0,
+    test.ok(fileNames.indexOf('test3.json') >= 0,
       'Test3 is in the filenames array');
 
-    test.ok(fileNames.indexOf('test4.txt') >=0,
+    test.ok(fileNames.indexOf('test4.txt') >= 0,
       'Test4 is in the filenames array');
 
     test.done();
 
   },
 
-  getNone: function(test) {
+  getNone: function (test) {
 
     test.expect(1);
 
@@ -106,5 +108,5 @@ module.exports = {
     test.done();
 
   }
-  
+
 };

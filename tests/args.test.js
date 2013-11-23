@@ -1,5 +1,7 @@
+'use strict';
+
 /*
-  
+
   Tested module is args.js but it is self invoking so we will only
   call it when needed.
 
@@ -8,19 +10,18 @@
 // Helper modules.
 var unrequire = require('../bin/unrequire'),
     sinon     = require('sinon'),
-     _        = require('underscore'),
     path      = require('path');
 
 
 module.exports = {
 
-  setUp: function(callback) {
+  setUp: function (callback) {
 
-    sinon.stub(process.stdout, "write", function() {
+    sinon.stub(process.stdout, 'write', function () {
       return;
     });
 
-    sinon.stub(process, "exit", function() {
+    sinon.stub(process, 'exit', function () {
       return;
     });
 
@@ -29,7 +30,7 @@ module.exports = {
 
     // Remove args.js from the require cache
     unrequire('bin' + path.sep + 'args');
-  
+
     // Remove help.js from the require.cache
     unrequire('bin' + path.sep + 'args' + path.sep + 'help');
 
@@ -40,7 +41,7 @@ module.exports = {
 
   },
 
-  tearDown: function(callback) {
+  tearDown: function (callback) {
 
     process.stdout.write.restore();
 
@@ -50,11 +51,11 @@ module.exports = {
 
   },
 
-  help: function(test) {
+  help: function (test) {
 
     test.expect(8);
-    
-    ['--help', '-help', '-h', 'help'].forEach(function(arg) {
+
+    ['--help', '-help', '-h', 'help'].forEach(function (arg) {
 
       // help.js has not yet been required
       test.strictEqual(require.cache[this.path + path.sep + 'help.js'], undefined);
@@ -70,21 +71,21 @@ module.exports = {
 
       // Remove args.js from the require cache
       unrequire('bin' + path.sep + 'args');
-  
+
       // Remove help.js from the require.cache
       unrequire('bin' + path.sep + 'args' + path.sep + 'help');
 
     }, this);
 
     test.done();
-  
+
   },
 
-  version: function(test) {
+  version: function (test) {
 
     test.expect(8);
 
-    ['--version', '-version', '-v', 'version'].forEach(function(arg) {
+    ['--version', '-version', '-v', 'version'].forEach(function (arg) {
 
       test.strictEqual(require.cache[this.path + path.sep + 'version.js'], undefined,
         'version.js has not yet been required');
@@ -100,14 +101,14 @@ module.exports = {
 
       // Remove args.js from the require cache
       unrequire('bin' + path.sep + 'args');
-  
+
       // Remove version.js from the require.cache
       unrequire('bin' + path.sep + 'args' + path.sep + 'version');
 
     }, this);
 
     test.done();
-  
+
   }
 
 };

@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 
   args.js
@@ -7,16 +9,16 @@
 
 */
 
-module.exports = (function() {
+module.exports = (function () {
 
   // Capture any arguments passed to Matic
   var args = process.argv.slice(2);
 
   // If there are any.
-  if(args.length) {
+  if (args.length) {
 
     // Take the first and attempt to act upon it.
-    switch(args[0]) {
+    switch (args[0]) {
       case '--help':
       case '-help':
       case '-h':

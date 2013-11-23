@@ -1,14 +1,15 @@
+'use strict';
+
 // Tested module
 var build = require('../lib/build');
 
 // Helper modules
-var sinon         = require('sinon'),
-    fs            = require('fs'),
+var fs            = require('fs'),
     rmdirSyncRec  = require('../lib/rmdirSyncRec');
 
 module.exports = {
 
-  setUp: function(callback) {
+  setUp: function (callback) {
 
     // Mock config object.
     this.config = {
@@ -20,25 +21,25 @@ module.exports = {
       },
       target: 'tests/buildTestOutput/'
     };
-    
+
     // Mock files object.
     this.files = {
       templates: {
         fileNames: ['one.jade'],
-        contents: ["h1 #{name}"]
+        contents: ['h1 #{name}']
       },
       schemas: {
-        contents: [{"name": "test file one"}, {"name": "test file two"}],
+        contents: [{'name': 'test file one'}, {'name': 'test file two'}],
         fileNames: ['one.test', 'two.test']
       }
     };
 
     callback();
-  
+
   },
 
-  tearDown: function(callback) {
-    
+  tearDown: function (callback) {
+
     // Clean up target folder
     rmdirSyncRec(this.config.target);
 
@@ -47,7 +48,7 @@ module.exports = {
   },
 
   // Test building from a single specified template file
-  buildSingleTemplate: function(test) {
+  buildSingleTemplate: function (test) {
 
     test.expect(6);
 
@@ -86,8 +87,8 @@ module.exports = {
     // Extend the templates config to include two template files
     this.files.templates = {
       fileNames: ['one.jade', 'two.jade'],
-      contents: ["h1 #{name}", "h2 #{name}"]
-    }
+      contents: ['h1 #{name}', 'h2 #{name}']
+    };
 
     test.ok(!fs.existsSync(this.config.target),
       'Target folder does not yet exist');
@@ -114,5 +115,5 @@ module.exports = {
 
     test.done();
   }
-  
+
 };

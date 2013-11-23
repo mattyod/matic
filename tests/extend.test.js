@@ -1,3 +1,5 @@
+'use strict';
+
 // Tested module
 var extend = require('../bin/extend.js');
 
@@ -6,16 +8,16 @@ var path = require('path');
 
 // Our expected extended object
 var expectedResult = {
-  "test": "User mock config",
-  "extra": "Extra user attribute"
+  'test': 'User mock config',
+  'extra': 'Extra user attribute'
 };
 
 module.exports = {
 
-  setUp: function(callback) {
+  setUp: function (callback) {
     // Create a mocked config object
     this.config = {
-      "test": "simple mock config"
+      'test': 'simple mock config'
     };
 
     // Store the process invokation path
@@ -28,8 +30,8 @@ module.exports = {
 
   },
 
-  tearDown: function(callback) {
-    
+  tearDown: function (callback) {
+
     // Restore the process invokation path
     process.chdir(this.oldProcessPath);
 
@@ -37,17 +39,17 @@ module.exports = {
 
   },
 
-  extend: function(test) {
-    
+  extend: function (test) {
+
     test.expect(1);
 
     var extended = extend(this.config);
 
     test.deepEqual(extended, expectedResult,
       'config object is extended as expected');
-    
+
     test.done();
 
   }
-  
+
 };

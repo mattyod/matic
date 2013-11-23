@@ -1,3 +1,5 @@
+'use strict';
+
 // Tested modules
 var mergeSchemas = require('../lib/mergeSchemas');
 
@@ -7,9 +9,9 @@ var fs      = require('fs'),
 
 module.exports = {
 
-  setUp: function(callback) {
+  setUp: function (callback) {
 
-    config.schemas = './tests/testSchemas/'
+    config.schemas = './tests/testSchemas/';
 
     this.expectedResult = JSON.parse(fs.readFileSync('tests/testSchemas/expectedTestResultsSchema.json', 'binary'));
 
@@ -19,13 +21,13 @@ module.exports = {
 
   },
 
-  tearDown: function(callback) {
+  tearDown: function (callback) {
 
     callback();
-  
+
   },
 
-  mergeSchema: function(test) {
+  mergeSchema: function (test) {
 
     test.expect(1);
 

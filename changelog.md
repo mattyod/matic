@@ -2,6 +2,8 @@
 
 ### 03 March 2014, 0.4.0
 * No longer attempt to itterate null 'objects'
+* Updated dependencies
+* Added lint script, ignore file and dependency
 
 ### 23 November 2013, 0.3.7
 * Added .jshintrc rule set and linted accordingly

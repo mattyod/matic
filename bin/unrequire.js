@@ -11,7 +11,7 @@
 
 var path = require('path');
 
-module.exports = function(mod) {
+module.exports = function (mod) {
 
   delete(require.cache[process.cwd() + path.sep + mod + '.js']);
 

@@ -14,10 +14,10 @@ var matic   = require('../lib/matic.js'),
 
 // Extend local config with a project based one if it exists.
 config = extend(config);
-
-if (check(config)) {
+console.log('I got', config);
+if (/*check(config)*/ false) {
   // Generate schema documentation with the config.
-  if (matic.generate(config)) {
+  if (matic(config)) {
 
     // Let the user know that build is complete.
     process.stdout.write(done(config));

@@ -17,21 +17,32 @@
 
 var fs    = require('fs'),
     _     = require('underscore'),
-    path  = require('path');
+    path  = require('path'),
+    rightClick = require('rightClick');
 
 module.exports = function (config) {
+  var userConfig;
 
-  // Build the config file path from the current process path
-  var configPath = process.cwd() + path.sep + 'config.json';
+  rightClick(process.cwd(), 'utf8')
+    .copy('config.json')
+    .tap(function () {
+      userConfig = JSON.parse(this.clipboard.files['config.json']);
+    });
 
-  // If there is a config.json file in the build folder
-  if (fs.existsSync(configPath)) {
+    // Don't break old config files
+    if (typeof userConfig.target === 'string') {
+      userConfig.target = {
+        path: userConfig.target
+      }
 
-    // Read it and extend the existing config with it
-    config = _.extend(config, JSON.parse(fs.readFileSync(configPath, 'utf8')));
+      if (userConfig.suffix) {
+        userConfig.target.suffix = userConfig.suffix;
+      }
+    }
 
-  }
+    _.extend(config.target, userConfig.target);
+    _.extend(config.schemas, userConfig.schemas);
+    _.extend(config.templates, userConfig.templates);
 
-  return config;
-
+    return config;
 };

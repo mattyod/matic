@@ -11,6 +11,6 @@
 
 module.exports = function (config) {
 
-  return '\nDocumentation built to ' + config.target + '\n\n';
+  return 'Documentation built to ' + config.target.path + '\n';
 
 };

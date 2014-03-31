@@ -8,6 +8,8 @@
 
 */
 
+var log = require('col');
+
 module.exports = function (config) {
   var valid = false;
 
@@ -16,20 +18,20 @@ module.exports = function (config) {
     requireError: ''
   };
 
-  if (config.template && config.template.lib) {
+  if (config.templates && config.templates.lib) {
 
-    msgs.requireError = 'The config file speicifies ' + config.template.lib +
+    msgs.requireError = 'The config file speicifies ' + config.templates.lib +
     ' as the templating engine but it is not installed. \nPlease run: \n' +
-    'npm install -g ' + config.template.lib + '\n';
+    'npm install -g ' + config.templates.lib + '\n';
 
     try {
-      require.resolve(config.template.lib);
+      require.resolve(config.templates.lib);
       valid = true;
     } catch (error) {
-      process.stdout.write(msgs.requireError);
+      log.error(msgs.requireError);
     }
   } else {
-    process.stdout.write(msgs.configError);
+    log.error(msgs.configError);
   }
 
   return valid;

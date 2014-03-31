@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "rightclick": "0.5.0",
+    "col": "0.0.5",
     "underscore": "1.6.0"
   },
   "devDependencies": {

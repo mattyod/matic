@@ -21,12 +21,14 @@ var fs    = require('fs'),
     rightClick = require('rightClick');
 
 module.exports = function (config) {
-  var userConfig;
+  var userConfig = {};
 
   rightClick(process.cwd(), 'utf8')
     .copy('config.json')
     .tap(function () {
-      userConfig = JSON.parse(this.clipboard.files['config.json']);
+      if (!_.isEmpty(this.clipboard.files)) {
+        _.extend(userConfig, JSON.parse(this.clipboard.files['config.json']));
+      }
     });
 
     // Don't break old config files
@@ -40,6 +42,7 @@ module.exports = function (config) {
       }
     }
 
+    config.assets = userConfig.assets;
     _.extend(config.target, userConfig.target);
     _.extend(config.schemas, userConfig.schemas);
     _.extend(config.templates, userConfig.templates);

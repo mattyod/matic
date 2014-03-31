@@ -9,6 +9,8 @@
 
 */
 
+var log = require('col');
+
 module.exports = (function () {
 
   // Capture any arguments passed to Matic
@@ -32,8 +34,8 @@ module.exports = (function () {
       require('./args/version');
       break;
     default:
-      process.stdout.write('Unknown argument, try matic help');
-
+      log.warn('Unknown argument, try matic help');
+      process.exit(0);
     }
 
   }

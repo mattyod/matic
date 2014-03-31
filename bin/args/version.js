@@ -10,12 +10,13 @@
 */
 
 // Get application version from the package file.
-var version = require('../../package.json').version;
+var version = require('../../package.json').version,
+    log = require('col');
 
 module.exports = (function () {
 
   // Write out the version to the terminal
-  process.stdout.write('matic: v' + version + '\n');
+  log.success('v' + version);
 
   // Exit the application with a success code
   process.exit(0);

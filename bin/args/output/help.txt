@@ -1,5 +1,4 @@
 
-Matic.js
 ---------
 
   Arguments
@@ -25,4 +24,3 @@ Matic.js
   Simply type 'matic', for more detailed information about how to set
   up a project folder for building please visit the github examples at
   https://github.com/mattyod/
-

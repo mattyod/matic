@@ -12,18 +12,18 @@ module.exports = (function () {
   return {
     target: {
       path: 'web',
-      suffix: '.html'
+      suffix: 'html'
     },
     schemas: {
       path: 'schemas',
-      suffix: '.json'
+      suffix: 'json'
     },
     templates: {
       folder: true,
       path: 'templates',
       file: 'default',
       lib: 'jade',
-      suffix: '.jade'
+      suffix: 'jade'
     }
   };
 

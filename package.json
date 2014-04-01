@@ -22,9 +22,10 @@
     "url": "https://github.com/mattyod/matic/issues"
   },
   "dependencies": {
-    "rightclick": "0.5.0",
+    "rightclick": "0.6.1",
     "col": "0.0.5",
-    "underscore": "1.6.0"
+    "underscore": "1.6.0",
+    "deep-has": "0.0.1"
   },
   "devDependencies": {
     "sinon": "1.8.2",

@@ -15,9 +15,7 @@
 
 */
 
-var fs    = require('fs'),
-    _     = require('underscore'),
-    path  = require('path'),
+var _ = require('underscore'),
     rightClick = require('rightClick');
 
 module.exports = function (config) {
@@ -31,21 +29,21 @@ module.exports = function (config) {
       }
     });
 
-    // Don't break old config files
-    if (typeof userConfig.target === 'string') {
-      userConfig.target = {
-        path: userConfig.target
-      }
+  // Don't break old config files
+  if (typeof userConfig.target === 'string') {
+    userConfig.target = {
+      path: userConfig.target
+    };
 
-      if (userConfig.suffix) {
-        userConfig.target.suffix = userConfig.suffix;
-      }
+    if (userConfig.suffix) {
+      userConfig.target.suffix = userConfig.suffix;
     }
+  }
 
-    config.assets = userConfig.assets;
-    _.extend(config.target, userConfig.target);
-    _.extend(config.schemas, userConfig.schemas);
-    _.extend(config.templates, userConfig.templates);
+  config.assets = userConfig.assets;
+  _.extend(config.target, userConfig.target);
+  _.extend(config.schemas, userConfig.schemas);
+  _.extend(config.templates, userConfig.templates);
 
-    return config;
+  return config;
 };

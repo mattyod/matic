@@ -29,7 +29,7 @@ module.exports = function (config) {
       }
     });
 
-  // Don't break old config files
+  // Don't break old (draft 3) config files
   if (typeof userConfig.target === 'string') {
     userConfig.target = {
       path: userConfig.target

@@ -16,7 +16,8 @@ module.exports = (function () {
     },
     schemas: {
       path: 'schemas',
-      suffix: 'json'
+      suffix: 'json',
+      indent: 2
     },
     templates: {
       folder: true,

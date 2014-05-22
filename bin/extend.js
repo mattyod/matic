@@ -40,6 +40,10 @@ module.exports = function (config) {
     }
   }
 
+  if (userConfig.index) {
+    config.index = userConfig.index;
+  }
+
   config.assets = userConfig.assets;
   _.extend(config.target, userConfig.target);
   _.extend(config.schemas, userConfig.schemas);

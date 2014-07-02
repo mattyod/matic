@@ -34,4 +34,8 @@ describe('lib/utils/compile', sandbox(function () {
     (typeof compiled['bar.json']).should.equal('function');
   });
 
+  it('clears the templates from the clipboard', function () {
+    (this.clipboard.files.templates === undefined).should.be.true;
+  });
+
 }));

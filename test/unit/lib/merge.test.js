@@ -9,8 +9,8 @@ describe('lib/merge', sandbox(function () {
     this.clipboard = {
       files: {
         schemas: {
-          'foo.json': JSON.stringify({ 'properties': { '$ref': './includes/foo2.json' }}),
-          'bar.json': JSON.stringify({ 'properties': { '$ref': './includes/bar2.json' }}),
+          'foo.json': JSON.stringify({ 'properties': { $ref: './includes/foo2.json' }}),
+          'bar.json': JSON.stringify({ 'properties': { $ref: './includes/bar2.json' }}),
           includes: {
             'foo2.json': JSON.stringify({ name: 'foo' }),
             'bar2.json': JSON.stringify({ name: 'bar' })

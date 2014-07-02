@@ -6,7 +6,7 @@ describe('lin/utils/pointy', sandbox(function () {
   var parentObj, obj;
 
   beforeEach(function () {
-    obj = { foo: 'bar'};
+    obj = { foo: 'bar' };
 
     parentObj = {
       foo: {

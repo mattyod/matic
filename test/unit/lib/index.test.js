@@ -16,7 +16,7 @@ describe('lib/index', sandbox(function () {
           }
         },
         ignored: {
-          'foo': '123'
+          foo: '123'
         }
       }
     };

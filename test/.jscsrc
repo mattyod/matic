@@ -1,0 +1,38 @@
+{
+    "requireCamelCaseOrUpperCaseIdentifiers"   : "ignoreProperties",
+    "requireParenthesesAroundIIFE"             : true,
+    "requireCapitalizedConstructors"           : true,
+    "disallowEmptyBlocks"                      : true,
+    "requireDotNotation"                       : true,
+    "requireCurlyBraces"                       : ["if", "else", "for", "while", "do", "try", "catch"],
+    "requireSpaceAfterKeywords"                : ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
+    "disallowSpaceAfterKeywords"               : [],
+    "disallowSpacesInNamedFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "requireSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningRoundBrace": true,
+        "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInsideParentheses"          : true,
+    "requireSpacesInsideObjectBrackets"        : "allButNested",
+    "disallowSpaceAfterObjectKeys"             : true,
+    "requireSpaceBeforeBinaryOperators"        : ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
+    "requireSpaceAfterBinaryOperators"         : ["?", "+", "/", "*", ":", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<=" ],
+    "disallowSpaceAfterPrefixUnaryOperators"   : ["++", "--", "+", "-", "~", "!"],
+    "disallowSpaceBeforePostfixUnaryOperators" : ["++", "--"],
+    "disallowImplicitTypeConversion"           : ["numeric", "boolean", "binary", "string"],
+    "disallowKeywords"                         : ["with"],
+    "disallowMultipleLineBreaks"               : true,
+    "validateLineBreaks"                       : "LF",
+    "disallowKeywordsOnNewLine"                : ["else"],
+    "requireKeywordsOnNewLine"                 : [],
+    "validateIndentation"                      : 2,
+    "validateQuoteMarks"                       : "'",
+    "disallowMixedSpacesAndTabs"               : true,
+    "disallowTrailingWhitespace"               : true,
+    "requireLineFeedAtFileEnd"                 : true,
+    "maximumLineLength"                        : 120,
+    "validateJSDoc"                            : {},
+    "excludeFiles"                             : ["node_modules/**", "tests/**"]
+}

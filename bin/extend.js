@@ -4,7 +4,7 @@
 
   extend.js
 
-  Checks if the folder from which Matic was invoked contains a config.js file
+  Checks if the folder from which Matic was invoked contains a config.json file
   If it does we load it in an extend our app config with any different settings
   it may have. This allows the user to over write any default values such as the
   target folder.
@@ -16,16 +16,18 @@
 */
 
 var _ = require('underscore'),
-    rightClick = require('rightClick');
+    rightClick = require('rightClick'),
+    getConfig = require('./get-config');
 
 module.exports = function (config) {
-  var userConfig = {};
+  var userConfig = {},
+      configFile = getConfig();
 
   rightClick(process.cwd(), 'utf8')
-    .copy('config.json')
+    .copy(configFile)
     .tap(function () {
       if (!_.isEmpty(this.clipboard.files)) {
-        _.extend(userConfig, JSON.parse(this.clipboard.files['config.json']));
+        _.extend(userConfig, JSON.parse(this.clipboard.files[configFile]));
       }
     });
 

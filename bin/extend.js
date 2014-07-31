@@ -16,7 +16,7 @@
 */
 
 var _ = require('underscore'),
-    rightClick = require('rightClick'),
+    rightClick = require('rightclick'),
     getConfig = require('./get-config'),
     log = require('col');
 

@@ -17,7 +17,8 @@
 
 var _ = require('underscore'),
     rightClick = require('rightClick'),
-    getConfig = require('./get-config');
+    getConfig = require('./get-config'),
+    log = require('col');
 
 module.exports = function (config) {
   var userConfig = {},
@@ -36,9 +37,11 @@ module.exports = function (config) {
     userConfig.target = {
       path: userConfig.target
     };
+    log.warn('Config target attribute is deprecated. Please use target.path');
 
     if (userConfig.suffix) {
       userConfig.target.suffix = userConfig.suffix;
+      log.warn('Config suffix attribute is deprecated. Please use target.suffix');
     }
   }
 

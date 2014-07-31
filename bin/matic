@@ -10,7 +10,6 @@ var matic   = require('../lib/matic.js'),
     config  = require('./config'),
     check   = require('./check'),
     extend  = require('./extend'),
-    done    = require('./done'),
     log = require('col');
 
 // Extend local config with a project based one if it exists.
@@ -21,7 +20,7 @@ if (check(config)) {
 
     emitter.on('done', function () {
       // Let the user know that build is complete.
-      log.success(done(config));
+      log.success('Documentation built to ' + config.target.path + '\n');
     });
 
 }

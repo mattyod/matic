@@ -10,7 +10,7 @@ module.exports = function () {
 
   if (files.indexOf('.maticrc') !== -1) {
     config = '.maticrc';
-  } else {
+  } else if (files.indexOf('config.json') !== -1) {
     config = 'config.json';
     log.warn('Use of config.json is deprecated. Please rename it to ".maticrc"');
   }

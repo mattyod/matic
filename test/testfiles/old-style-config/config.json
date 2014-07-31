@@ -1,0 +1,15 @@
+{
+  "source": "foo",
+  "target": "bar",
+  "suffix": "html",
+  "template": {
+    "folder": true,
+    "path": "foobar",
+    "file": "default",
+    "lib": "barfoo"
+  },
+  "index": {
+    "schemas": true
+  },
+  "assets": ["foo", "bar"]
+}

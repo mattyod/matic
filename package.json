@@ -36,7 +36,6 @@
     "jscs": "1.5.7"
   },
   "scripts": {
-    "unitold": "nodeunit tests",
     "lint": "./node_modules/jshint/bin/jshint ./",
     "jscs": "./node_modules/jscs/bin/jscs ./",
     "unit": "mocha test/unit",

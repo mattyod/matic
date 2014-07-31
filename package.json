@@ -36,6 +36,7 @@
     "jscs": "1.5.7"
   },
   "scripts": {
+    "hooks": "chmod +x hooks/*; cd .git/hooks && ln -sf ../../hooks/* .",
     "lint": "./node_modules/jshint/bin/jshint ./",
     "jscs": "./node_modules/jscs/bin/jscs ./",
     "unit": "mocha test/unit",

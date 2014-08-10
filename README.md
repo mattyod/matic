@@ -1,86 +1,134 @@
-# Matic [![Build Status](https://secure.travis-ci.org/mattyod/matic.png?branch=master)](http://travis-ci.org/mattyod/matic)
-A Node.js build tool for generating HTML documentation from JSON schemas.
+# Matic [![NPM version](http://img.shields.io/npm/v/matic.svg)](https://www.npmjs.org/package/matic) [![Build status](http://img.shields.io/travis/mattyod/matic.svg)](http://travis-ci.org/mattyod/matic)
 
-Matic is currently in Alpha state and whilst usable for most use cases still lots of work remain as development continues. You are encouraged to fork the repo should you wish to contribute to the code and bug reports or suggestions will be attended to in the issue queue.
+Build tool for generating HTML documentation from JSON schemas. Use Jade templates to create clear and easy to read schema documentation for your schemas.
 
-Current development was based on the [draft JSON schema 03](http://tools.ietf.org/html/draft-zyp-json-schema-03) specification and support for any follow up specifications will be ported as they become available.
+Supports [JSON schema draft 3](http://tools.ietf.org/html/draft-zyp-json-schema-03) and [JSON schema draft 4](http://tools.ietf.org/html/draft-zyp-json-schema-04).
 
 ## Installation
-Use NPM to install globally:
-
-    $ npm install -g matic
-
-A sure indication that matic is installed and operational, which also retrieves the current version number, is to run the command:
-
-    $ matic -v
-
-## Building documentation
-From the root of your project folder simply run:
-
-    $ matic
-
-### Example projects
-There are three example projects available, which are full project folders not yet built with Matic, to aid as examples of how to structure your project folder to work with Matic: 
-
-  * [very simple example](https://github.com/mattyod/matic-very-simple-example). Which contains one schema file and one template file. [Very simple generated mark up](http://mattyod.github.com/matic-very-simple-example/).
-  * [simple example](https://github.com/mattyod/matic-simple-example). Which contains one schema file and a more structured template set-up with includes and mixins. [Simple generated mark up](http://mattyod.github.com/matic-simple-example/).
-  * [example](https://github.com/mattyod/matic-example). Which contains a schema and a sub schema as well as a more structured template set-up with includes and mixins. [Generated mark up](http://mattyod.github.com/matic-example/).
-
-A typical layout using default settings:
 
 ```
-|____config.json
+npm install -g matic
+```
+
+## Usage
+
+Matic is designed to be highly configurable through a ```.maticrc``` file at the root of your project but is configured for a basic set up by defult.
+
+A typical project layout using default settings.
+
+```
+|____.maticrc [optional]
 |____schemas
-| |____my-awesome-schema.json
+| |____my-schema.json
 |____templates
-| |____default.jade
-|____web
+  |____default.jade
 ```
 
-Essentially you will need 
- * a folder with at least one schema document 
- * a folder with at least one template file
- * an optional config file for custom settings
+Essentially you will need:
 
-The default global configuration looks for a main template with filename `default.jade` which can be customized with a project level config file, ([see below](#setting-config-options)).
+* A folder with at least one schema document.
+* A folder with at least one template file.
+* an optional .maticrc file for custom settings.
 
-By default Matic will use your template(s) and schema(s) to generate a set of HTML files into a folder named `web`, this can also be modified through the local config file.
+By default Matic will use your schema(s) and template(s) to generate a set of HTML files into a folder called ```web```. However there are many ways in which this can be customised through the .maticrc file.
 
-## Setting config options
-Various default settings are configured through Matic's global config file. These settings can be modified on a per project basis by providing a custom `config.json` file located at the root of the project folder.
+Then to build your documenation; from the route of your project, simply run:
 
-The following parameters are configurable, default values in brackets:
+```
+matic
+```
 
-### Source [./schemas/]
-The source folder is where Matic will look for JSON schema documents. These files can have any name with the `.json` extension.
+## Configuration
 
-Example:
+Matic can be configured throught the use of a ```.maticrc``` file to the specific demands of your project. The following options can be set:
+
+### Target
+
+An object relating to the target output for your build. By default this is configured as:
+
 ```json
-{"source": "./schemas/"}
+{
+  "target": {
+    "path": "web",
+    "suffix": "html"
+  }
+}
 ```
 
-### Target [./web/]
-This is the output folder where Matic will generate the resulting HTML files. This folder will be created automatically, if it does not exist.
+It contains the following options:
 
-Example:
+#### Path
+
+**default** _web_
+
+Target output folder for your rendered output files and associated assets.
+
+#### Suffix
+
+**default** _html_
+
+Suffix to be appended to your rendered output files. This can be overwritten to be ```md``` or whatever you choose.
+
+### Schemas
+
+An object relating to your schemas and _if_ you intend to include them in your project output allows you to dictate the way in which they will be rendered. By default this is configured as:
+
 ```json
-{"target": "./web/"}
+{
+  "schemas": {
+    "path": "schemas",
+    "suffix": "json",
+    "indent": 2
+  }
+}
 ```
 
-### Suffix [.html]
-Suffix to apply to generated files. As an example you might change this to '.md' and generate markdown pages for a github wiki.
+It contains the following options:
 
-Example:
+#### Path
+
+**default** _schemas_
+
+Path from which Matic should locate schema files.
+
+#### Suffix
+
+**default** _json_
+
+Suffix that your schema files use and also the suffix that will be used if your schemas are to be included in your project output.
+
+#### Indent
+
+**default** _2_
+
+Indentation to use for schema files if you choose to include them in your output files.
+
+### Templates
+
+An object relating to your templates and how they should be handled.
+
+**N.B.** only tested with Jade.
+
+By default this is configured as:
+
 ```json
-{"suffix": ".html"}
+{
+  "templates": {
+    "folder": true,
+    "path": "templates",
+    "file": "default",
+    "lib": "jade",
+    "suffix": "jade"
+  }
+}
 ```
 
-### Template
-This is an object containing details of the templating language which you intend Matic to use to generate the HTML output. Please note only support for Jade has been tested to date, although it should work equally well with other libraries which implement the `compile()` and `render()` methods. If you do happen to have the opportunity to test Matic with an alternative provider, please report back with your findings.
+It contains the following options:
 
-The template configuration object has the following settings:
+#### Folder
 
-#### Folder [true]
+**default** _true_
+
 Boolean flag that indicates whether Matic should map multiple template files to corresponding schemas. Significantly this allows for a greater verbosity when documenting more than one schema as each template can contain any extra explanations or examples specific to the relevant schema.
 
 So for example, when set to true, a folder structure such as:
@@ -104,7 +152,7 @@ Will generate an output folder such as:
 
 Where both schemas have been rendered through their corresponding templates.
 
-**N.B.** It is not necessary to specify a file attribute ([see below](#file-default)) within the templates object if mapping a folder like this, however, if there are schemas that do not map directly to template files, i.e. have the same name, Matic will attempt to use the file specified by the file attribute as a default template.
+**N.B.** It is not necessary to specify a [file attribute](#user-content-file) within the templates object if mapping a folder like this, however, if there are schemas that do not map directly to template files, i.e. have the same name, Matic will attempt to use the file specified by the file attribute as a default template.
 
 Similarly if the folder attribute is set to false Matic will just map all schemas to the file specified by the 'file' attribute, which is 'default' by default. Each generated file will take the name of it's schema so a starting structure such as:
 
@@ -116,39 +164,78 @@ Similarly if the folder attribute is set to false Matic will just map all schema
 | |____two.json
 ```
 
-Will generate the same output web folder as above but both output files will have been passed through default.jade schema.
+This will generate the same output web folder as above but both output files will have been passed through default.jade schema.
 
-#### Path [./templates/]
-The path to your template files folder.
 
-#### File [default]
-The name of your primary template file which should be at the top level of the templates folder specified in the 'path' attribute.
+#### Path
 
-#### Lib [jade]
-Name of the template library to use. **Note:** Matic will assume that the template files have the same extension. i.e. default.jade
+**default** _templates_
 
-Example:
+Path from which Matic should locate template files.
+
+#### File
+
+The name of your primary or default template file which should be at the top level of the templates folder specified in the 'path' attribute.
+
+This will be used as a fallback when "folder" is set to true and a direct mapping between schemas and templates cannot be found.
+
+#### Lib
+
+**default** _jade_
+
+The library which Matic should require to compile and render your templates.
+
+**N.B.** only tested with Jade.
+
+#### Suffix
+
+**default** _jade_
+
+Suffix that Matic will expect your template files to have.
+
+### Assets
+
+**default** _n/a_
+
+An array of asset folders to be copied into your output folder. You will need to add this to your .maticrc file if you wish to include assets such as js, css or images into your final build. Simply add any folder paths you wish to be copied over such as:
+
 ```json
-"template": {
-  "folder": true,
-  "path": "./templates/",
-  "file": "default",
-  "lib": "jade"
+{
+  "assets": ["js", "css", "img"]
 }
 ```
 
-In this example Matic will expect to find a file named default.jade located in the templates folder at the root of your project.
+Copying is done recursively and includes all files and subfolders.
 
-### Assets [ ]
-An array of files or folders to be copied into the target build folder. There are no resources referenced by default, you will need to add your own config.json file to the project root if you want Matic to copy additional files and/or folders during build. The original resources will remain unchanged.
+### Index
 
-Example:
+**default** _n/a_
+
+A boolean or object that indicates you wish to add an index page to your build output. If present Matic will build an index page for your project an link to all of your generated schema documentation files.
+
+To do this simply add a property such as:
+
 ```json
-{"assets": ["css", "js"]}
+{
+  index: true
+}
 ```
 
-This example instructs Matic to copy two folders named `css` and `js` into the target build folder. Copying is done recursively so includes all files and sub folders.
+#### Additional indexing
+
+However, you may for example also wish to add raw schemas to your index file. Matic can do this for you too. Just change the index property to an object and list the folders you wish to be indexed.
+
+This could be:
+
+```json
+{
+  index: {
+    "schemas": true
+  }
+}
+```
 
 ## Licence
 
 [MIT](https://raw.github.com/mattyod/matic/master/LICENSE)
+

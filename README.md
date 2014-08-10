@@ -217,7 +217,7 @@ To do this simply add a property such as:
 
 ```json
 {
-  index: true
+  "index": true
 }
 ```
 
@@ -229,7 +229,7 @@ This could be:
 
 ```json
 {
-  index: {
+  "index": {
     "schemas": true
   }
 }

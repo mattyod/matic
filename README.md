@@ -237,6 +237,10 @@ This could be:
 }
 ```
 
+## Example
+
+For an example project with a config, css & js that you can use for your own project please check take a look at: [Matic-draft4-example](https://github.com/mattyod/matic-draft4-example).
+
 ## Licence
 
 [MIT](https://raw.github.com/mattyod/matic/master/LICENSE)

@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 10 August 2014, 0.5.0
+*
+
 ### 03 March 2014, 0.4.0
 * No longer attempt to itterate null 'objects'
 * Updated dependencies

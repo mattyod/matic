@@ -1,8 +1,8 @@
 'use strict';
 
-var point = require('../../../../lib/utils/pointy');
+var local = require('../../../../lib/utils/local');
 
-describe('lin/utils/pointy', sandbox(function () {
+describe('lin/utils/localy', sandbox(function () {
   var parentObj, obj;
 
   beforeEach(function () {
@@ -18,19 +18,19 @@ describe('lin/utils/pointy', sandbox(function () {
   });
 
   it('returns the child object and it\'s path', function () {
-    point(parentObj, './bar/baz.json', './foo/file.json').should.deep.equal({
+    local(parentObj, './bar/baz.json', './foo/file.json').should.deep.equal({
       obj: obj,
       path: 'foo/bar/baz.json'
     });
 
-    point(parentObj, './baz.json', './foo/bar/file.json').should.deep.equal({
+    local(parentObj, './baz.json', './foo/bar/file.json').should.deep.equal({
       obj: obj,
       path: 'foo/bar/baz.json'
     });
   });
 
   it('returns path and false if the object doesn\'t exist', function () {
-    point(parentObj, './bar/notThere.json', './foo/file.json').should.deep.equal({
+    local(parentObj, './bar/notThere.json', './foo/file.json').should.deep.equal({
       obj: false,
       path: 'foo/bar/notThere.json'
     });

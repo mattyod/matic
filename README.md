@@ -213,6 +213,8 @@ Copying is done recursively and includes all files and subfolders.
 
 A boolean or object that indicates you wish to add an index page to your build output. If present Matic will build an index page for your project an link to all of your generated schema documentation files.
 
+Matic will look for a template called index.jade (or whatever suffix you have chosen) in order to render this page.
+
 To do this simply add a property such as:
 
 ```json

@@ -6,7 +6,7 @@ Supports [JSON schema draft 3](http://tools.ietf.org/html/draft-zyp-json-schema-
 
 ## Installation
 
-```
+```sh
 npm install -g matic
 ```
 
@@ -34,7 +34,7 @@ By default Matic will use your schema(s) and template(s) to generate a set of HT
 
 Then to build your documenation; from the route of your project, simply run:
 
-```
+```sh
 matic
 ```
 

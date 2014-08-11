@@ -4,7 +4,7 @@
 
   extend.js
 
-  Checks if the folder from which Matic was invoked contains a config.js file
+  Checks if the folder from which Matic was invoked contains a config.json file
   If it does we load it in an extend our app config with any different settings
   it may have. This allows the user to over write any default values such as the
   target folder.
@@ -15,23 +15,44 @@
 
 */
 
-var fs    = require('fs'),
-    _     = require('underscore'),
-    path  = require('path');
+var _ = require('underscore'),
+    rightClick = require('rightclick'),
+    getConfig = require('./get-config'),
+    log = require('col');
 
 module.exports = function (config) {
+  var userConfig = {},
+      configFile = getConfig();
 
-  // Build the config file path from the current process path
-  var configPath = process.cwd() + path.sep + 'config.json';
+  rightClick(process.cwd(), 'utf8')
+    .copy(configFile)
+    .tap(function () {
+      if (!_.isEmpty(this.clipboard.files)) {
+        _.extend(userConfig, JSON.parse(this.clipboard.files[configFile]));
+      }
+    });
 
-  // If there is a config.json file in the build folder
-  if (fs.existsSync(configPath)) {
+  // Don't break old (draft 3) config files
+  if (typeof userConfig.target === 'string') {
+    userConfig.target = {
+      path: userConfig.target
+    };
+    log.warn('Config target attribute is deprecated. Please use target.path');
 
-    // Read it and extend the existing config with it
-    config = _.extend(config, JSON.parse(fs.readFileSync(configPath, 'utf8')));
-
+    if (userConfig.suffix) {
+      userConfig.target.suffix = userConfig.suffix;
+      log.warn('Config suffix attribute is deprecated. Please use target.suffix');
+    }
   }
 
-  return config;
+  if (userConfig.index) {
+    config.index = userConfig.index;
+  }
 
+  config.assets = userConfig.assets;
+  _.extend(config.target, userConfig.target);
+  _.extend(config.schemas, userConfig.schemas);
+  _.extend(config.templates, userConfig.templates);
+
+  return config;
 };

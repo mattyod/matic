@@ -1,7 +1,0 @@
-{
-  "name": "test schema",
-  "description": "This schema is used for testing only and doesn't represent any actual JSON model",
-  "subSchema": {
-    "$ref": "subSchemas/subSchemaOne.json"
-  }
-}

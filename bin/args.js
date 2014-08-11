@@ -9,6 +9,8 @@
 
 */
 
+var log = require('col');
+
 module.exports = (function () {
 
   // Capture any arguments passed to Matic
@@ -19,21 +21,21 @@ module.exports = (function () {
 
     // Take the first and attempt to act upon it.
     switch (args[0]) {
-    case '--help':
-    case '-help':
-    case '-h':
-    case 'help':
-      require('./args/help');
-      break;
-    case '--version':
-    case '-version':
-    case '-v':
-    case 'version':
-      require('./args/version');
-      break;
-    default:
-      process.stdout.write('Unknown argument, try matic help');
-
+      case '--help':
+      case '-help':
+      case '-h':
+      case 'help':
+        require('./args/help');
+        break;
+      case '--version':
+      case '-version':
+      case '-v':
+      case 'version':
+        require('./args/version');
+        break;
+      default:
+        log.warn('Unknown argument, try matic help');
+        process.exit(0);
     }
 
   }

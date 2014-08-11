@@ -41,8 +41,5 @@
     "jscs": "./node_modules/jscs/bin/jscs ./",
     "unit": "mocha test/unit",
     "test": "npm run lint && npm run jscs && npm run unit"
-  },
-  "engines": {
-    "node": ">=0.8 <0.11"
   }
 }

@@ -1,7 +1,15 @@
 # Matic Changelog
 
+### 26 August 2014, 0.5.1
+* Added link to rendered example
+* Fixed typos in readme and changed tone a little
+
 ### 10 August 2014, 0.5.0
-*
+* Support for draft 4 (allOf, anyOf, oneOf, enum etcetera)
+* Improved $ref support
+* Support for index pages
+* Now uses .maticrc file instead of config.json
+* Copies schemas to project if specified
 
 ### 03 March 2014, 0.4.0
 * No longer attempt to itterate null 'objects'

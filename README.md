@@ -152,7 +152,7 @@ Will generate an output folder such as:
 
 Where both schemas have been rendered through their corresponding templates.
 
-**N.B.** It is not necessary to specify a [file attribute](#user-content-file) within the templates object if mapping a folder like this, however, if there are schemas that do not map directly to template files, i.e. have the same name, Matic will attempt to use the file specified by the file attribute as a default template.
+**N.B.** It is not necessary to specify a [file attribute](#user-content-file) within the templates object if mapping a folder like this. However, if there are schemas that do not map directly to template files—i.e., have the same name—Matic will attempt to use the file specified by the file attribute as a default template.
 
 If the folder attribute is set to false Matic will map all schemas to the file specified by the 'file' attribute, which is 'default' by default. Each generated file will take the name of it's schema so a starting structure such as:
 
@@ -196,7 +196,7 @@ Suffix that Matic will expect your template files to have.
 
 **default** _n/a_
 
-An array of asset folders to be copied into your output folder. You will need to add this to your .maticrc file if you wish to include assets such as js, css or images into your final build. Add any folder paths you wish to be copied over such as:
+An array of asset folders to be copied into your output folder. You will need to add this to your `.maticrc` file if you wish to include assets such as JS, CSS or images into your final build. Add any folder paths you wish to be copied over, such as:
 
 ```json
 {
@@ -210,9 +210,9 @@ Copying is done recursively and includes all files and subfolders.
 
 **default** _n/a_
 
-A boolean or object that indicates you wish to add an index page to your build output. If present Matic will build an index page for your project an link to all of your generated schema documentation files.
+A boolean or object that indicates you wish to add an index page to your build output. If present ,Matic will build an index page for your project and link to all of your generated schema documentation files.
 
-Matic will look for a template called index.jade (or whatever suffix you have chosen) in order to render this page.
+Matic will look for a template called `index.jade` (or whatever suffix you have chosen) in order to render this page.
 
 To do this add a property such as:
 
@@ -238,7 +238,7 @@ This could be:
 
 ## Example
 
-For an example project with a config, css & js that you can use for your own project please take a look at: [Matic-draft4-example](https://github.com/mattyod/matic-draft4-example) and it's [rendered output](http://mattyod.github.io/matic-draft4-example/).
+For an example project with a config, CSS & JS, that you can use for your own project, please take a look at: [Matic-draft4-example](https://github.com/mattyod/matic-draft4-example) and its [rendered output](http://mattyod.github.io/matic-draft4-example/).
 
 ## Licence
 

@@ -152,7 +152,7 @@ Will generate an output folder such as:
 
 Where both schemas have been rendered through their corresponding templates.
 
-**N.B.** It is not necessary to specify a [file attribute](#user-content-file) within the templates object if mapping a folder like this. However, if there are schemas that do not map directly to template files—i.e., have the same name—Matic will attempt to use the file specified by the file attribute as a default template.
+**N.B.** It is not necessary to specify a [file attribute](#user-content-file) within the templates object if mapping a folder like this. However, if there are schemas that do not map directly to template file, (have the same name), Matic will attempt to use the file specified by the file attribute as a default template.
 
 If the folder attribute is set to false Matic will map all schemas to the file specified by the 'file' attribute, which is 'default' by default. Each generated file will take the name of it's schema so a starting structure such as:
 
@@ -210,7 +210,7 @@ Copying is done recursively and includes all files and subfolders.
 
 **default** _n/a_
 
-A boolean or object that indicates you wish to add an index page to your build output. If present ,Matic will build an index page for your project and link to all of your generated schema documentation files.
+A boolean or object that indicates you wish to add an index page to your build output. If present, Matic will build an index page for your project and link to all of your generated schema documentation files.
 
 Matic will look for a template called `index.jade` (or whatever suffix you have chosen) in order to render this page.
 

@@ -1,6 +1,7 @@
 'use strict';
 
 var index = require('../../../lib/index');
+var path = require('path');
 
 describe('lib/index', sandbox(function () {
   var config, result, expected;
@@ -31,9 +32,9 @@ describe('lib/index', sandbox(function () {
       files: {
         'index.html': 'index.html',
         schemas: {
-          'bar.json': 'schemas/bar.json',
+          'bar.json': 'schemas' + path.sep + 'bar.json',
           bars: {
-            'baz.json': 'schemas/bars/baz.json'
+            'baz.json': 'schemas' + path.sep + 'bars' + path.sep + 'baz.json'
           }
         }
       }

@@ -1,5 +1,8 @@
 # Matic Changelog
 
+### 14 December 2016, 0.5.2
+* Couple of minor fixes to tests running in windows environments
+
 ### 26 August 2014, 0.5.1
 * Added link to rendered example
 * Fixed typos in readme and changed tone a little
